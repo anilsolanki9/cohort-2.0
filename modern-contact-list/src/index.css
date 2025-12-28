@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+.contactList::-webkit-scrollbar{
+  display: none;
+}
