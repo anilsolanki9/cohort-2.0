@@ -1,0 +1,5 @@
+Comment => ctrl + /
+Switch VS Code tabs => ctrl + Tab
+Switch Windows => alt + Tab
+Select next Instance of selected text => Ctrl + D
+Multiple Cursor => alt + click

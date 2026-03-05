@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This is My First Webpage</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta name="description" content="This is my website, i am making this when i am learning HTML" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="HTML, CSS, Javascript, WebDev, Development, DSA" />
+
+    <!-- Redirect after 10 seconds -->
+    <!-- <meta http-equiv="refresh" content="10; url=https://www.google.com" /> -->
+
+    <!-- Auto Refresh After 5 second -->
+    <!-- <meta http-equiv="refresh" content="5"> -->
+
+    <script defer>
+      console.log("This Script use defer, that improves html render speed.");
+    </script>
+
+    <meta property="og:image" content="https://ik.imagekit.io/sheryians/light-logo_lNzGXRRlQ.png?updatedAt=1701272916848" />
+
+    <link rel="shortcut icon" href="https://ik.imagekit.io/sheryians/light-logo_lNzGXRRlQ.png?updatedAt=1701272916848" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>Forms</h1>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Your Username" required autocomplete="off" />
+      <br />
+      <br />
+      <label for="email">Email</label>
+      <!-- new-email is used when we want to disable auto sugestions for email field -->
+      <input type="email" id="email" placeholder="Your Email" required autocomplete="new-email" />
+      <br />
+      <br />
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Your Password" required autocomplete="new-password" />
+      <br /><br />
+      <!-- Gender Radio buttons -->
+      <label for="gender">Gender</label>
+      <br />
+      <label for="male"><input type="radio" name="gender" id="male" /> Male</label>
+      <br />
+      <label for="female"><input type="radio" name="gender" id="female" /> Female</label>
+      <br />
+      <label for="other"><input type="radio" name="gender" id="other" /> Other</label>
+      <br />
+      <br />
+      <!-- Multiselect Question -->
+      <label for="option">What is HTML?</label>
+      <br />
+      <label for="opt1"><input type="checkbox" name="answer" id="opt1" value="opt1" /> Scalaton of Webpage</label><br />
+      <label for="opt2"><input type="checkbox" name="answer" id="opt2" value="opt2" /> Building Block Of Wepage</label><br />
+      <label for="opt3"><input type="checkbox" name="answer" id="opt3" value="opt3" /> HyperText Markup Language</label><br />
+      <label for="opt4"><input type="checkbox" name="answer" id="opt4" value="opt4" /> A Programming Language</label>
+      <br />
+      <br />
+      <input type="color" name="col" id="col" />
+      <br /><br />
+      <input type="datetime-local" name="" id="" />
+      <br />
+      <br />
+      <input type="file" name="" id="" />
+      <br /><br />
+      <input type="number" name="" id="" />
+      <br /><br />
+      <input type="range" name="" id="" />
+      <br /><br />
+      <input type="search" name="" id="" />
+      <br /><br />
+      <input type="reset" value="Reset" />
+      <br /><br />
+      <label for="country">Country</label>
+      <select name="country" id="country">
+        <option value="india" selected>India</option>
+        <option value="china">China</option>
+        <option value="usa">USA</option>
+        <option value="japan">Japan</option>
+        <option value="europe" disabled>Europe</option>
+      </select>
+      <br /><br />
+      <label for="favs">Favourite Shows</label>
+      <select name="favs" id="favs" size="1" multiple>
+        <option value="shin" selected>Shin Chan</option>
+        <option value="doremon">Doremon</option>
+        <option value="ben10">Ben 10</option>
+        <option value="ninja">Ninja Hattory</option>
+        <option value="motupatlu">Motu Patlu</option>
+      </select>
+      <br /><br />
+      <select>
+        <optgroup label="Frontend">
+          <option>HTML</option>
+          <option>CSS</option>
+        </optgroup>
+
+        <optgroup label="Backend">
+          <option>Node.js</option>
+          <option>Python</option>
+        </optgroup>
+      </select>
+      <br /><br />
+      <button>Submit</button>
+    </form>
+    <hr />
+    <h1>Image with loading="lazy"</h1>
+    <img src="https://ik.imagekit.io/sheryians/light-logo_lNzGXRRlQ.png?updatedAt=1701272916848" alt="Sheryians Logo" width="220" />
+
+    <h1>Responsive Images</h1>
+    <h3>Using srcset, and sized</h3>
+    <img
+      src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=800"
+      srcset="
+        https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400   400w,
+        https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=800   800w,
+        https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1200 1200w
+      "
+      sizes="(max-width: 600px) 90vw, 800px"
+      alt="Mountain landscape"
+      width="300"
+    />
+
+    <h3>Using picture tag</h3>
+    <picture>
+      <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600" />
+
+      <source media="(min-width: 601px)" srcset="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1200" />
+
+      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=800" alt="Mountain" />
+    </picture>
+
+    <h1>Video</h1>
+    <video src="./asthetic.mp4" controls autoplay muted loop height="500" width="300"></video>
+    <h2>Second video using Video and source</h2>
+    <video controls width="400" poster="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1200">
+      <source src="./asthetic.mp4" type="video/mp4" />
+      <track src="captions.vtt" kind="captions" srclang="en" />
+    </video>
+
+    <h1>Audio</h1>
+    <audio src="./myMusic.mp3" controls muted loop></audio>
+    <audio controls muted loop>
+      <source src="./myMusic.mp3" type="audio/mp3" />
+    </audio>
+
+    <h1>iframe Content</h1>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/kBX5WH9b4M4?si=GCfygezU3d6sxtOQ"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+
+    <h1>Drop Down List</h1>
+    <details>
+      <summary>Open this to explore Hot Web Dev Technologies</summary>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, aspernatur!</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>Next.js</li>
+        <li>React.js</li>
+        <li>TypeScript</li>
+      </ul>
+    </details>
+    <hr />
+    <h1>Table</h1>
+    <style>
+      table,
+      th,
+      td,
+      tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px 20px;
+      }
+    </style>
+    <table>
+      <tr>
+        <th rowspan="3">Day</th>
+        <th colspan="3">Seminar</th>
+      </tr>
+
+      <tr>
+        <td colspan="2">Schedule</td>
+        <td rowspan="2">Topic</td>
+      </tr>
+
+      <tr>
+        <td>Begin</td>
+        <td>End</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">Monday</td>
+        <td rowspan="2">8:00 a.m.</td>
+        <td rowspan="2">5:00 p.m.</td>
+        <td>Introduction to XML</td>
+      </tr>
+
+      <tr>
+        <td>Validity: DTD and Relax NG</td>
+      </tr>
+
+      <tr>
+        <td rowspan="4">Tuesday</td>
+        <td>8:00 a.m.</td>
+        <td>11:00 a.m.</td>
+        <td rowspan="2">XPath</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">11:00 a.m.</td>
+        <td rowspan="2">2:00 p.m.</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">XSL Transformations</td>
+      </tr>
+
+      <tr>
+        <td>2:00 p.m.</td>
+        <td>5:00 p.m.</td>
+      </tr>
+
+      <tr>
+        <td>Wednesday</td>
+        <td>8:00 a.m.</td>
+        <td>12:00 p.m.</td>
+        <td>XSL Formatting Ojects</td>
+      </tr>
+    </table>
+    <hr />
+
+    
+  </body>
+</html>
