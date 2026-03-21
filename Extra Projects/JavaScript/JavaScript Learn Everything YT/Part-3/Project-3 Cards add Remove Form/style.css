@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(10, 10, 10);
+}
+
+#wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.section1 {
+  width: 85%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 40px;
+  margin: 0 auto;
+}
+
+.section1 .formBox {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.523);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.field:last-child {
+  margin-bottom: 0px;
+}
+
+.field:last-child input {
+  background-color: rgb(196, 196, 196);
+  color: rgb(53, 53, 53);
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  color: white;
+  min-width: 100%;
+  max-width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(94, 94, 94);
+  transition: all 0.1s linear;
+}
+
+.field textarea {
+  height: 100px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  box-shadow: 0 0 0 1px white;
+}
+
+/* -------------------------------------------------------------------------- */
+.section2 {
+  width: 85%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-block: 40px;
+  margin: 0 auto;
+  gap: 25px;
+}
+
+.card {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background-color: rgb(91, 91, 91);
+  color: whitesmoke;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+}
+
+.card .removeBtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  border-radius: 50%;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.352);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.352);
+  cursor: pointer;
+  transition: all 0.2s linear;
+  user-select: none;
+}
+
+.removeBtn:hover {
+  scale: 1.1;
+}
+
+.removeBtn:active {
+  scale: 0.9;
+}
+
+.card .top {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .top img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white;
+}
+
+.bottom {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 20px;
+}
+
+.bottom h2 {
+  font-size: 30px;
+}
+
+.bottom p {
+  font-size: 14px;
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="notes-page">
+        <!-- Left controls -->
+        <div class="controls">
+          <button id="add-note" class="ctrl-btn"><i class="ri-add-fill"></i></button>
+          <button id="next-btn" class="ctrl-btn"><i class="ri-arrow-up-long-line"></i></button>
+          <button id="last-btn" class="ctrl-btn"><i class="ri-arrow-down-long-line"></i></button>
+        </div>
+
+        <!-- Card stack -->
+
+        <div class="card-stack"></div>
+
+        <!-- Right color dots -->
+        <div class="color-dots">
+          <div class="dot emergency"></div>
+          <div class="dot important"></div>
+          <div class="dot urgent"></div>
+          <div class="dot no-rush"></div>
+        </div>
+      </div>
+      <div class="form-page">
+        <form class="form-card">
+          <h2>New Call</h2>
+
+          <div class="field">
+            <label for="imageUrl">Image URL</label>
+            <input required type="text" id="imageUrl" placeholder="https://example.com/photo.jpg" />
+          </div>
+
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input required type="text" id="fullName" placeholder="Enter full name" />
+          </div>
+
+          <div class="field">
+            <label for="homeTown">Home Town</label>
+            <input required type="text" id="homeTown" placeholder="Enter home town" />
+          </div>
+
+          <div class="field">
+            <label for="purpose">Purpose</label>
+            <input required type="text" id="purpose" placeholder="e.g., Quick appointment note" />
+          </div>
+
+          <div class="field">
+            <label>Category</label>
+            <div class="categories">
+              <label class="category emergency">
+                <input class="radio-btn" required type="radio" value="emergency" name="category" />
+                Emergency
+              </label>
+              <label class="category important">
+                <input class="radio-btn" required type="radio" value="important" name="category" />
+                Important
+              </label>
+              <label class="category urgent">
+                <input class="radio-btn" required type="radio" value="urgent" name="category" />
+                Urgent
+              </label>
+              <label class="category norush">
+                <input class="radio-btn" required type="radio" value="no-rush" name="category" />
+                No Rush
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-create">Create Note</button>
+          <div id="close-form-btn" class="btn-close">Close</div>
+        </form>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicPlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+
+      <!-- NAVBAR -->
+      <nav>
+        <div class="logo">
+          <div class="logo-icon"><i class="ri-soundcloud-line"></i></div>
+          MusicPlay
+        </div>
+        <div class="search-bar">
+          <span class="search-icon"><i class="ri-search-2-line"></i></span>
+          <input id="songsearch" type="text" placeholder="search music, artists, albums..." />
+        </div>
+        <div class="nav-right">
+          <div class="nav-avatar">AS</div>
+        </div>
+      </nav>
+
+      <!-- MAIN -->
+      <main>
+        <!-- LEFT: PLAYER -->
+        <div class="player-card">
+          <!-- Artist -->
+          <div class="artist-row">
+            <div class="left">
+              <div class="artist-avatar">
+                <img
+                  id="player-artist-profile"
+                  src="https://imgs.search.brave.com/maoEBgx1jfRzPJswvbgEai7QimqPMJK8df3GSIly3PU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yb2xs/aW5nc3RvbmVpbmRp/YS5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDMvQW51/di1KYWluLTk2MHg2/NDAuanBlZw"
+                  alt=""
+                />
+              </div>
+              <div class="artist-info">
+                <div class="artist-name" id="player-artist-name">Anuv Jain</div>
+                <div class="artist-handle" id="player-artist-handle">@anuvjain</div>
+              </div>
+            </div>
+            <button class="heart-btn" id="heartBtn"><i class="ri-poker-hearts-line"></i></button>
+          </div>
+
+          <!-- Album Art -->
+          <div class="album-art">
+            <img id="player-bg-img" src="https://i.pinimg.com/736x/18/32/fc/1832fcd824a64a9dcfd55b541284f5aa.jpg" alt="" />
+          </div>
+
+          <!-- Song meta -->
+          <div class="song-meta">
+            <div class="song-title">Dil Diya Galla</div>
+            <div class="song-artist">Anuv Jain</div>
+          </div>
+
+          <!-- Progress -->
+          <div class="progress-section">
+            <div class="progress-times">
+              <span id="currentTime">0:52</span>
+              <span id="remainTime">-1:21</span>
+            </div>
+            <div class="progress-bar" id="progressBar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls">
+            <button class="ctrl-btn back-btn" title="Previous"><i class="ri-skip-back-fill"></i></button>
+            <button class="play-btn" id="playBtn"><i class="ri-play-large-fill"></i></button>
+            <button class="ctrl-btn next-btn" title="Next"><i class="ri-skip-forward-fill"></i></button>
+          </div>
+        </div>
+
+        <!-- RIGHT: PLAYLISTS -->
+        <div class="right-panel">
+          <div>
+            <div class="section-title">Playlists</div>
+          </div>
+          <div class="btns">
+            <div class="playlist-tabs">
+              <button class="tab active">All songs</button>
+              <button class="tab">Favourites</button>
+              <button class="tab">Best</button>
+              <button class="tab">Chill</button>
+            </div>
+            <button class="tab add-tab">Add +</button>
+          </div>
+
+          <div class="songs-list" id="songsList">
+            <!-- Songs injected by JS -->
+            <div class="song-row playing">
+              <div class="song-thumb">
+                <img src="https://i.pinimg.com/736x/18/32/fc/1832fcd824a64a9dcfd55b541284f5aa.jpg" alt="" />
+              </div>
+              <div class="song-info">
+                <div class="song-name">title</div>
+                <div class="song-by">artist</div>
+              </div>
+              <button class="play-row-btn">▶</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

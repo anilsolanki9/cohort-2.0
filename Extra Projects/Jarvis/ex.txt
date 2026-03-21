@@ -1,0 +1,58 @@
+1. CPU Scheduling Algorithms Implement and compare algorithms like:
+
+First Come First Served (FCFS)
+
+Shortest Job First (SJF, preemptive/non-preemptive)
+
+Round Robin (with time quantum)
+
+Priority Scheduling Calculate average waiting time, turnaround time, and display Gantt charts.
+
+2. Page Replacement Algorithms Simulate virtual memory management:
+
+FIFO (First In First Out)
+
+LRU (Least Recently Used)
+
+Optimal Page Replacement Compute page faults for a given reference string.
+
+3. Disk Scheduling Algorithms Simulate head movement:
+
+FCFS
+
+SCAN (Elevator)
+
+C-SCAN Calculate total head movement.
+
+4. Memory Allocation Techniques
+
+First Fit, Best Fit, Worst Fit for dynamic partitioning.
+
+Multiprogramming with Fixed/Variable partitions (MFT/MVT).
+
+5. File Allocation and Organization
+
+Sequential, Linked, Indexed allocation.
+
+Single/Two-level directory structures.
+
+
+---
+
+Write comments to make code readable
+use deecriptive variable names
+
+Q. Write a C program that implements the first-come, first-serve (FCFS) CPU Schedulling Algorithms for 3 processes, take their burst time and calculate their average wait time.
+
+Q. Write a C program that implements the first-come, first-serve (FCFS) CPU Schedulling Algorithms for 4 processes, and calculates average turnaround time.
+
+Q. Write a C program to calculate the number of page faults using FIFO (First in First Out) pag replacement algorithm for the reference 
+string: 5 0 1 3 2 4 1 0 5 
+Frame Size : 3
+
+Q. Write a C program to implement the LRU (Least Recently Used) page replacement algorithm for the same reference
+string: 5 0 1 3 2 4 1 0 5 
+Frame capacity : 3
+
+Q. Write a C program to imeplement Round Robin Schedulling for 5 processes where burst time for process PI to P5 is 5 15 4 3 9 and Time Quantum = 4. Calculate their Average waiting time and average Turnaround.
+

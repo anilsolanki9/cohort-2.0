@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(to right, #5d6871, #a1a5a6);
+  color: #eee;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+Share on Twitter
+Share on Facebook
+Show all gradients
+#feac5e
+→ 
+#c779d0
+→ 
+#4bc0c8
+*/
+
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.center input {
+  font-size: 2rem;
+  padding: 20px 50px;
+  background: linear-gradient(to right in oklab, #feac5e, #c779d0, #4bc0c8);
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  color: rgb(40, 40, 40);
+}
+
+.center input::placeholder {
+  color: rgba(255, 255, 255, 0.502);
+}
+
+.center div {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+  font-size: 1.5rem;
+}
+
+.warn {
+  color: rgb(255, 222, 9);
+  font-weight: bold;
+  position: relative;
+}
+
+.warn::after {
+  content: "⚠️ Limit Exceeded";
+  position: absolute;
+  text-wrap: nowrap;
+  top: 0px;
+  left: 110%;
+  font-size: 1.3rem;
+}

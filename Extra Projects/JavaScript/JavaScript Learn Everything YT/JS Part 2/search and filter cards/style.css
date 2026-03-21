@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap");
+
+/* font-family: "Outfit", sans-serif; headings */
+/* font-family: "Plus Jakarta Sans", sans-serif; body */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, rgb(34, 47, 79), rgb(72, 36, 128));
+  color: #eeeeee;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+}
+
+input {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  background-color: #111;
+  color: #d8d8d8;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 2px rgb(241, 25, 241);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgb(109, 12, 255);
+  }
+}
+
+.cards-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.error-msg {
+  font-size: 1.5rem;
+  color: rgba(245, 245, 245, 0.548);
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.error-msg.show {
+  display: block;
+}
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.423);
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.blurred-layer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: 1;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.855) 0%, rgba(0, 0, 0, 0.447) 40%, rgba(0, 0, 0, 0) 60%);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding-right: 10px;
+  color: white;
+  z-index: 2;
+}
+
+.content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.content p {
+  font-size: 14px;
+  color: whitesmoke;
+  line-height: 1.4;
+  font-weight: 100;
+}

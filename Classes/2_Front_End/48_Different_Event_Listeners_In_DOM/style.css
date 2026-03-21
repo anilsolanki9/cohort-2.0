@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: clamp(15px, 1vw + 0.5rem, 18px);
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #9981fb, #462691);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  color: white;
+  padding-top: 5rem;
+  font-size: 3rem;
+}
+
+p {
+  padding-bottom: 1rem;
+  color: rgb(241, 241, 241);
+  font-size: 1rem;
+}
+
+.container {
+  width: 95%;
+  height: 50%;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  gap: 0.5%;
+  justify-content: space-around;
+  position: relative;
+}
+
+.key {
+  background-color: whitesmoke;
+  border-radius: 0 0 10px 10px;
+  transform-origin: 50% 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  user-select: none;
+  color: rgba(0, 0, 0, 0.635);
+  box-shadow: none;
+  transition: all ease 0.4s;
+}
+
+.key:active {
+  scale: 0.97;
+  background-color: rgb(158, 158, 158);
+}
+
+.sharpKey {
+  position: absolute;
+  width: 3.2%;
+  height: 70%;
+  background-color: rgb(33, 33, 33);
+  border-radius: 0 0 10px 10px;
+  transition: scale 0.3s;
+  transform-origin: 50% 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.644);
+}
+
+.sharpKey-1 {
+  left: 2.98%;
+}
+
+.sharpKey-2 {
+  left: 7.8%;
+}
+
+.sharpKey-3 {
+  left: 17.35%;
+}
+
+.sharpKey-3 {
+  left: 17.35%;
+}
+
+.sharpKey-4 {
+  left: 22.15%;
+}
+
+.sharpKey-5 {
+  left: 26.95%;
+}
+
+.sharpKey-6 {
+  left: 36.5%;
+}
+
+.sharpKey-7 {
+  left: 41.3%;
+}
+
+.sharpKey-8 {
+  left: 50.83%;
+}
+
+.sharpKey-9 {
+  left: 55.61%;
+}
+
+.sharpKey-10 {
+  left: 60.41%;
+}
+
+.sharpKey-11 {
+  left: 69.91%;
+}
+
+.sharpKey-12 {
+  left: 74.71%;
+}
+
+.sharpKey-13 {
+  left: 84.31%;
+}
+
+.sharpKey-14 {
+  left: 89.11%;
+}
+
+.sharpKey-15 {
+  left: 93.91%;
+}
+
+.sharpKey:active {
+  scale: 0.97;
+  background-color: rgb(22, 22, 22);
+}
+
+.animate {
+  animation: scaledu 0.3s ease 1;
+}
+
+@keyframes scaledu {
+  50% {
+    scale: 0.97;
+    background-color: rgba(255, 255, 255, 0.644);
+  }
+}
+
+.SharpAnimate {
+  animation: Sharpscaledu 0.3s ease 1;
+}
+
+@keyframes Sharpscaledu {
+  50% {
+    scale: 0.97;
+    background-color: rgb(22, 22, 22);
+  }
+}

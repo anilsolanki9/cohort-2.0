@@ -1,0 +1,332 @@
+@font-face {
+    font-family: Helvetica;
+    src: url(./assets/HelveticaNeueRoman.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#wrapper {
+    height: 98vh;
+    width: 100%;
+    background-color: white;
+    font-family: Helvetica;
+    overflow-x: hidden;
+}
+
+.container {
+    height: 100%;
+    width: calc(100% - 60px);
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 1.5fr;
+    gap: 10px;
+    margin: 0 30px;
+    grid-template-areas: 'nav nav nav' 'left right-top right-top' 'left bottom-left bottom-left-2';
+}
+
+#wrapper::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.item {
+    background-color: blueviolet;
+    border: 2px solid black;
+}
+
+/* navbar */
+
+.item1 {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.item1 * {
+    cursor: pointer;
+}
+
+.nav-left {
+    font-size: 1.65rem;
+}
+
+.nav-center {
+    display: flex;
+    gap: 30px;
+}
+
+.req-call-btn {
+    color: white;
+    background-color: rgb(0, 102, 255);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-left: 17px;
+}
+
+.item2 {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+}
+
+.left-h1 {
+    font-size: 5rem;
+    font-weight: 100;
+    line-height: 4.4rem;
+}
+
+.left-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+#inline-img-capsule img {
+    object-fit: cover;
+    /* object-position: right; */
+    border-radius: 50px;
+    height: 57px;
+    width: 130px;
+    margin-right: 14px;
+}
+
+.h1-btn {
+    /* font-size: ; */
+    font-weight: 500;
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 13px 25px;
+    position: relative;
+    top: -15px;
+    border-radius: 50px;
+}
+
+.cntct-btn {
+    color: white;
+    background-color: rgb(0, 102, 255);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-right: 17px;
+}
+
+.left-top-bottom a {
+    color: black;
+    font-weight: 500;
+}
+
+.left-bottom {
+    position: relative;
+    bottom: 20px;
+}
+
+.left-bottom p {
+    padding-right: 16rem;
+    margin-bottom: 20px;
+}
+
+.left-bottom .logo-container {
+    width: 950%;
+    display: flex;
+    justify-items: flex-start;
+    align-items: flex-end;
+    gap: 60px;
+}
+
+.left-bottom .logo-container > * {
+    height: 28px;
+}
+
+.logo-container b {
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+/* 3rd */
+
+.item3 {
+    grid-area: right-top;
+    background-image: url(./assets/spline-3d-floating-element-for-website-background-picjumbo-com.jpeg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    padding: 25px 35px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item3-top {
+    font-size: 3rem;
+    color: white;
+}
+
+.item3-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item3-bottom-left {
+    color: white;
+    width: 38%;
+}
+
+.round-arrow {
+    padding: 20px;
+    background-color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+/* 4th */
+
+.item4 {
+    grid-area: bottom-left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    background-image: url(./assets/2.jpg);
+    background-size: cover;
+    background-position: bottom;
+    border: none;
+    background-color: transparent;
+    border-radius: 40px;
+}
+
+.item4-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.round-btn {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.item4-arrow i {
+    font-size: 1rem;
+    padding: 12px;
+}
+.item4-bottom {
+    color: white;
+}
+
+.item4-heading {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.item4-desc {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+/* 5th */
+
+.item5 {
+    grid-area: bottom-left-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    background-image: url(./assets/3d-view-holographic-layering.jpg);
+    background-size: cover;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+    border-radius: 40px;
+}
+
+.item5-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item5-profiles > img {
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: relative;
+}
+
+.profile-img2 {
+    z-index: 2;
+    right: 13px;
+    box-shadow: -2px 2px 3px rgba(82, 82, 82, 0.495);
+}
+
+.profile-img3 {
+    z-index: 2;
+    right: 24px;
+    box-shadow: -2px 2px 3px rgba(82, 82, 82, 0.495);
+}
+
+.item5-bottom {
+    color: white;
+}
+
+.item5-heading {
+    font-size: 4rem;
+    margin-bottom: 5px;
+}
+
+.item5-desc {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.blue-btn {
+    border: 2px solid rgb(0, 102, 255);
+    transition: all 0.3s;
+}
+
+.blue-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.h1-btn {
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.h1-btn:hover {
+    background-color: rgb(0, 102, 255);
+    color: white;
+    border: 2px solid rgb(0, 102, 255);
+}
+
+.pointer {
+    cursor: pointer;
+}

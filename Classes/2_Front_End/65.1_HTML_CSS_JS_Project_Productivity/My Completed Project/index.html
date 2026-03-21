@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stylish Productivity App</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="main">
+      <nav>
+        <div class="nav-inner">
+          <h2>Productivity DashBoard</h2>
+          <div class="theme">Change Theme</div>
+        </div>
+      </nav>
+
+      <section class="allElems">
+        <header>
+          <div class="header1">
+            <h1 class="date">20 April, 2025</h1>
+            <h2 class="day-time">Wednesday, 10:00 AM</h2>
+            <h3 class="current-location" title="click to change city">Jodhpur (RJ)</h3>
+          </div>
+          <div class="header2">
+            <h1 class="temp">20 °C</h1>
+            <h2 class="condition">Sunny</h2>
+            <h3 class="precipitation">Precipitation: 0%</h3>
+            <h3 class="humidity">Humidity: 40%</h3>
+            <h3 class="wind">Wind: 8 km/h</h3>
+          </div>
+        </header>
+        <div class="allFeatures">
+          <div class="todo elem" id="0">
+            <img
+              src="https://images.unsplash.com/photo-1679253682477-391467b454b6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <h2>Todo List</h2>
+          </div>
+          <div class="daily elem" id="1">
+            <img
+              src="https://images.unsplash.com/photo-1660480904370-a5dcd0be395b?q=80&w=2018&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <h2>Daily Planner</h2>
+          </div>
+          <div class="moti elem" id="2">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1710962184909-f9f8dc2c9f5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <h2>Motivation Quotes</h2>
+          </div>
+          <div class="pomo elem" id="3">
+            <img
+              src="https://images.unsplash.com/photo-1763198215363-aeb2decffeda?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <h2>Pomodoro Timer</h2>
+          </div>
+          <div class="goals elem" id="4">
+            <img
+              src="https://images.unsplash.com/photo-1646838130840-7853cf1ffc61?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <h2>Daily Goals</h2>
+          </div>
+        </div>
+      </section>
+      <section class="fullElem todo-list-fullPage">
+        <button class="back" id="0">Close</button>
+        <h2>Your Personalized Task List</h2>
+        <div class="todo-container">
+          <div class="addTask">
+            <form>
+              <input id="task-input" type="text" placeholder="Enter Task" autocomplete="off" required />
+              <textarea name="" id="" placeholder="Enter Details"></textarea>
+              <div class="mark-imp">
+                <input type="checkbox" name="" id="check" />
+                <label for="check">Mark as Important!</label>
+              </div>
+              <button>Add Task</button>
+            </form>
+          </div>
+          <div class="allTask"></div>
+        </div>
+      </section>
+      <section class="fullElem daily-planner-fullPage">
+        <button class="back" id="1">Close</button>
+        <h2>Plan your Day to be more Productive</h2>
+
+        <div class="day-planner"></div>
+      </section>
+      <section class="fullElem motivational-fullPage">
+        <button class="back" id="2">Close</button>
+        <div class="motivation-container">
+          <div class="motivation-wrapper">
+            <img src="./assets/icons8-quote-100.png" alt="" />
+            <div class="motivation-1">
+              <h2>Quote of the Day</h2>
+            </div>
+            <div class="motivation-2">
+              <h1></h1>
+            </div>
+            <div class="motivation-3">
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fullElem pomodoro-fullPage">
+        <button class="back" id="3">Close</button>
+        <h2>Study with me!</h2>
+        <div class="pomo-timer">
+          <div class="session">Work Session</div>
+          <h1>25:00</h1>
+          <div class="pomo-btn">
+            <button class="start-timer">Start</button>
+          </div>
+          <div class="pomo-btn">
+            <button class="pause-timer">Pause</button>
+          </div>
+          <div class="pomo-btn">
+            <button class="reset-timer">Reset</button>
+          </div>
+        </div>
+      </section>
+      <section class="fullElem daily-goals-fullPage">
+        <button class="back" id="4">Close</button>
+        <h2>Track Your Daily Goals</h2>
+        <div class="daily-goals-container">
+          <div class="addGoal">
+            <form>
+              <textarea rows="4" name="" id="" placeholder="Enter Goal Details" required autocomplete="off"></textarea>
+              <div class="mark-imp">
+                <input type="checkbox" name="tick" id="tick" />
+                <label for="tick">Mark as Important!</label>
+              </div>
+              <button>Add Goal</button>
+            </form>
+          </div>
+          <div class="allGoals">
+            <div class="goal">
+              <span class="goal-number">1</span>
+              <span class="true imp">imp</span>
+              <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, et.</h5>
+              <button id="0">Mark as Completed</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./script.js" defer></script>
+  </body>
+</html>

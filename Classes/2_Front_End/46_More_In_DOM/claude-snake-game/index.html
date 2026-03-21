@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="scanlines"></div>
+    <div class="crt-overlay"></div>
+
+    <main>
+      <!-- Header -->
+      <header class="game-header">
+        <div class="logo">
+          <span class="logo-snake">🐍</span>
+          <h1 class="logo-title">SNAKE</h1>
+        </div>
+        <div class="stats-bar">
+          <div class="stat-chip">
+            <span class="stat-label">BEST</span>
+            <span class="stat-value high-score">0</span>
+          </div>
+          <div class="stat-chip stat-chip--score">
+            <span class="stat-label">SCORE</span>
+            <span class="stat-value score">0</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-label">TIME</span>
+            <span class="stat-value time">00:00</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Game Area -->
+      <section class="game-area">
+        <div class="board-wrapper">
+          <div class="board-glow"></div>
+          <div class="board"></div>
+        </div>
+
+        <!-- Controls hint -->
+        <div class="controls-hint">
+          <span>↑ ↓ ← →</span> to move &nbsp;|&nbsp; <span>WASD</span> also works
+        </div>
+      </section>
+
+      <!-- Modal Overlay -->
+      <div class="modal">
+        <!-- Start Screen -->
+        <div class="start-game modal-card">
+          <div class="modal-icon">🐍</div>
+          <h2 class="modal-title">SNAKE</h2>
+          <p class="modal-subtitle">EAT. GROW. SURVIVE.</p>
+          <div class="modal-divider"></div>
+          <div class="how-to-play">
+            <p>Use <kbd>arrow keys</kbd> or <kbd>WASD</kbd> to move</p>
+            <p>Eat the <span class="food-dot">●</span> to grow and score</p>
+            <p>Avoid walls and your own tail!</p>
+          </div>
+          <button class="btn btn-start">
+            <span class="btn-text">START GAME</span>
+            <span class="btn-glow"></span>
+          </button>
+          <p class="high-score-display">BEST: <span class="high-score">0</span></p>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="game-over modal-card">
+          <div class="modal-icon crash-icon">💥</div>
+          <h2 class="modal-title">GAME OVER</h2>
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-label">SCORE</span>
+              <span class="result-value score">0</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">TIME</span>
+              <span class="result-value time">00:00</span>
+            </div>
+            <div class="result-item result-item--wide">
+              <span class="result-label">BEST</span>
+              <span class="result-value high-score">0</span>
+            </div>
+          </div>
+          <div class="new-record" style="display:none">🏆 NEW RECORD!</div>
+          <button class="btn btn-restart">
+            <span class="btn-text">PLAY AGAIN</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

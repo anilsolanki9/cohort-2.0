@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inter-batch-showdown</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <!-- left aside -->
+      <aside class="left-aside">
+        <!-- header on top -->
+        <div class="header">
+          <input
+            type="text"
+            placeholder="Enter title"
+            value="Untitled"
+            title="Click to edit title"
+            id="projectTitle"
+          />
+        </div>
+
+        <!-- layers section -->
+        <div class="section layers-section">
+          <!-- layers header -->
+          <div class="section-header">
+            <h2>Layers</h2>
+            <!-- layers move buttons -->
+            <div class="layer-buttons">
+              <div class="layer-up-btn" title="click to move layer up">
+                <img
+                  loading="lazy"
+                  src="./public/left-aside-icons/layer-up.svg"
+                  alt=""
+                />
+              </div>
+              <div class="layer-down-btn" title="click to move layer down">
+                <img
+                  loading="lazy"
+                  src="./public/left-aside-icons/layer-down.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- layers list -->
+          <div class="items-list layers-list"></div>
+        </div>
+
+        <!-- pages section -->
+        <div class="section pages-section">
+          <!-- pages header -->
+          <div class="section-header">
+            <h2>Pages</h2>
+            <div class="add-page-btn" title="click to add new page">
+              <img
+                loading="lazy"
+                src="./public/left-aside-icons/plus.svg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- pages list -->
+          <div class="items-list"></div>
+        </div>
+
+        <!-- Export Settings -->
+        <div class="section export-section">
+          <h2 class="section-header">Export</h2>
+          <div class="buttons-row">
+            <div class="action-btn" id="exportHtml" title="Export as HTML">
+              <h3>HTML</h3>
+            </div>
+            <div class="action-btn" id="exportJson" title="Export as JSON">
+              <h3>JSON</h3>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- center -->
+      <main class="main-content">
+        <div class="canvas-wrapper">
+          <div class="main-canvas" id="canvas"></div>
+        </div>
+
+        <!-- dock -->
+        <div class="dock-wrapper">
+          <div class="dock">
+            <div class="dock-item" id="CreateRectBtn">
+              <img
+                loading="lazy"
+                src="./public/dock-icons/rectangle.svg"
+                alt=""
+              />
+            </div>
+            <div class="dock-item" id="CreateCircleBtn">
+              <img loading="lazy" src="./public/dock-icons/circle.svg" alt="" />
+            </div>
+            <div class="dock-item" id="createTextBtn">
+              <img loading="lazy" src="./public/dock-icons/text.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- right aside -->
+      <aside class="right-aside">
+        <!-- Position settings -->
+        <div class="settings-section">
+          <h2 class="settings-header">Position</h2>
+
+          <div class="setting-group">
+            <h3 class="setting-label">Position</h3>
+            <div class="input-row">
+              <div class="input-wrapper">
+                <div class="input-prefix">X :</div>
+                <input
+                  type="text"
+                  placeholder="x-cordinate"
+                  value="100"
+                  id="posX"
+                />
+              </div>
+              <div class="input-wrapper">
+                <div class="input-prefix">Y :</div>
+                <input
+                  type="text"
+                  placeholder="y-cordinate"
+                  value="100"
+                  id="posY"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <h3 class="setting-label">Rotation</h3>
+            <div class="input-row">
+              <div class="input-wrapper">
+                <div class="input-prefix input-icon">
+                  <img
+                    loading="lazy"
+                    src="./public/right-aside-icons/angle.svg"
+                    alt=""
+                  />
+                  <span>:</span>
+                </div>
+                <input
+                  type="text"
+                  placeholder="angle"
+                  value="0°"
+                  id="rotation"
+                />
+              </div>
+              <div class="action-btn" title="rotate 90° right" id="rotate90Btn">
+                <h3>+ 90°</h3>
+              </div>
+              <div class="action-btn" title="rotate 45° right" id="rotate45Btn">
+                <h3>+ 45°</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layout settings -->
+        <div class="settings-section">
+          <h2 class="settings-header">Layout</h2>
+
+          <div class="setting-group">
+            <h3 class="setting-label">Dimensions</h3>
+            <div class="input-row">
+              <div class="input-wrapper">
+                <div class="input-prefix">W :</div>
+                <input
+                  type="text"
+                  placeholder="width in px"
+                  value="100px"
+                  id="width"
+                />
+              </div>
+              <div class="input-wrapper">
+                <div class="input-prefix">H :</div>
+                <input
+                  type="text"
+                  placeholder="height in px"
+                  value="100 px"
+                  id="height"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appearance settings -->
+        <div class="settings-section">
+          <h2 class="settings-header">Appearance</h2>
+
+          <div class="setting-group">
+            <div class="input-row">
+              <div class="input-column">
+                <h3 class="setting-label">Opacity</h3>
+                <div class="input-wrapper">
+                  <div class="input-prefix input-icon">
+                    <img
+                      loading="lazy"
+                      src="./public/right-aside-icons/opacity.svg"
+                      alt=""
+                    />
+                    <span>:</span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="opacity %"
+                    value="100%"
+                    id="elemOpacity"
+                  />
+                </div>
+              </div>
+
+              <div class="input-column">
+                <h3 class="setting-label">Corner Radius</h3>
+                <div class="input-wrapper">
+                  <div class="input-prefix input-icon">
+                    <img
+                      loading="lazy"
+                      src="./public/right-aside-icons/corner-radius.svg"
+                      alt=""
+                    />
+                    <span>:</span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="corner Radius"
+                    value="0"
+                    id="cornerRadius"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fill settings -->
+        <div class="settings-section">
+          <h2 class="settings-header">Fill</h2>
+
+          <div class="setting-group">
+            <div class="input-row">
+              <div class="input-column">
+                <h3 class="setting-label">Bg Color</h3>
+                <div class="input-wrapper color-input">
+                  <label for="fillColor" class="color-picker bg-color">
+                    <input type="color" name="fillColor" id="fillColor" />
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ffffff"
+                    value=""
+                    id="bgColorText"
+                  />
+                </div>
+              </div>
+
+              <div class="input-column">
+                <h3 class="setting-label">Opacity</h3>
+                <div class="input-wrapper">
+                  <div class="input-prefix input-icon">
+                    <img
+                      loading="lazy"
+                      src="./public/right-aside-icons/opacity.svg"
+                      alt=""
+                    />
+                    <span>:</span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="opacity %"
+                    value="100%"
+                    id="bgOpacity"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <div class="input-row">
+              <div class="input-column">
+                <h3 class="setting-label">Text Color</h3>
+                <div class="input-wrapper color-input">
+                  <label for="textColor" class="color-picker text-color">
+                    <input type="color" name="textColor" id="textColor" />
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ffffff"
+                    value=""
+                    id="textColorText"
+                  />
+                </div>
+              </div>
+
+              <div class="input-column">
+                <h3 class="setting-label">Text Opacity</h3>
+                <div class="input-wrapper">
+                  <div class="input-prefix input-icon">
+                    <img
+                      loading="lazy"
+                      src="./public/right-aside-icons/opacity.svg"
+                      alt=""
+                    />
+                    <span>:</span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="opacity %"
+                    value="100%"
+                    id="textOpacity"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="settings-section">
+          <h2 class="settings-header">Text Content</h2>
+          <div class="textarea-wrapper">
+            <textarea class="textareaScroll" id="textArea"></textarea>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: whitesmoke;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(66, 66, 66);
+}
+
+nav {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  anchor-name: --anc-box;
+}
+
+nav .logo {
+  font-size: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+nav .right {
+  display: flex;
+  align-items: center;
+}
+
+nav .right .link {
+  text-decoration: none;
+  color: white;
+  padding: 12px 25px;
+  position: relative;
+  z-index: 10;
+}
+.link:hover {
+  anchor-name: --anc-box;
+}
+
+.link:hover ~ .anchor {
+  border-radius: 10px;
+}
+
+.anchor {
+  position: absolute;
+  position-anchor: --anc-box;
+  top: anchor(top);
+  left: anchor(left);
+  right: anchor(right);
+  bottom: anchor(bottom);
+
+  background-color: rgb(84, 84, 84);
+  z-index: 0;
+  transition: all ease 0.3s;
+}

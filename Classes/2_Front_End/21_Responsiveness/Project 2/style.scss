@@ -1,0 +1,342 @@
+@font-face {
+    font-family: new;
+    src: url(./section1/fonts/Crostan-Bold.ttf);
+}
+
+:root {
+    --yellow: #dc963a;
+    // --red: #a33b24;
+    --red: #a13217;
+
+    --woodden: #7c6955;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+// wrapper
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: url(./section1/paper-bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+}
+
+// first section
+
+.section1 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .main-heading {
+        position: absolute;
+        z-index: 0;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20rem;
+        font-family: new;
+        color: var(--yellow);
+    }
+    .main-heading::first-letter {
+        font-size: 21.5rem;
+    }
+    .line-div {
+        position: absolute;
+        height: 3px;
+        width: 41.5%;
+        background-color: var(--yellow);
+        left: 33%;
+        top: 7%;
+    }
+}
+
+.volume-present-div {
+    color: var(--woodden);
+    display: flex;
+    flex-direction: column;
+    // justify-items: center;
+    align-items: flex-end;
+    width: 250px;
+    font-size: 1rem;
+    padding: 30px;
+    gap: 20px;
+    .volume-div,
+    .present-div {
+        display: flex;
+        gap: 10px;
+        .volume-text,
+        .present-text {
+            text-align: right;
+        }
+        i {
+            font-size: 2rem;
+        }
+    }
+}
+
+.red-main-box {
+    width: 80%;
+    height: 30%;
+    margin: 0 auto;
+    background-color: var(--red);
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65%;
+
+    .circle {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .asthma-enhaler {
+        height: 250px;
+        position: absolute;
+        top: -245px;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .img-background {
+        mix-blend-mode: luminosity;
+        position: absolute;
+        height: 200px;
+        top: -200px;
+        left: 47%;
+        transform: translateX(-50%);
+        clip-path: polygon(
+            62% 15%,
+            74% 32%,
+            88% 41%,
+            91% 65%,
+            71% 92%,
+            33% 96%,
+            17% 74%,
+            17% 50%,
+            24% 34%,
+            28% 22%
+        );
+    }
+    .inner-circle-div {
+        padding: 6px;
+        display: flex;
+        gap: 10px;
+        #innercircle1 {
+            border: 2px solid white;
+        }
+
+        #innercircle2 {
+            background-color: #7c6955;
+        }
+
+        #innercircle4 {
+            background-color: white;
+        }
+
+        .lungs-inner {
+            height: 120px;
+            position: relative;
+            top: -14px;
+            left: 10px;
+            opacity: 0.7;
+        }
+    }
+
+    #smcircle {
+        height: 65px;
+        width: 65px;
+        background-color: #7c6955;
+        position: relative;
+        top: -50px;
+        left: 60px;
+    }
+
+    .upper-box {
+        max-width: 260px;
+        background-color: var(--woodden);
+        position: absolute;
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap-reverse;
+        top: -130px;
+        padding: 10px;
+        #upper-circle5 {
+            margin-left: 55px;
+        }
+    }
+
+    .chemical-structure {
+        height: 60px;
+        position: absolute;
+        top: -150px;
+        left: 10px;
+    }
+
+    .bar-code {
+        height: 80px;
+        position: absolute;
+        top: -120px;
+        left: 260px;
+    }
+
+    #fill-box {
+        height: 10px;
+        width: 30px;
+        position: absolute;
+        top: -128px;
+        left: 250px;
+        background-color: black;
+    }
+
+    #border-blk-box {
+        height: 10px;
+        width: 40px;
+        position: absolute;
+        top: -45px;
+        left: 263px;
+        border: 2px solid black;
+    }
+
+    .mask-image {
+        height: 60px;
+        position: absolute;
+        bottom: 50px;
+        left: -70px;
+    }
+
+    .plus-box {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 100%;
+        right: 100%;
+        font-weight: 900;
+    }
+    .dots-box {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 0%;
+        right: 100%;
+        // font-weight: 900;
+        gap: 5px;
+    }
+
+    .tubes {
+        position: absolute;
+        bottom: 90%;
+        left: 32%;
+        width: 80px;
+    }
+
+    .hand-holding-syring {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 120%;
+    }
+
+    .center-text1 {
+        position: absolute;
+        bottom: 40%;
+        left: 30%;
+        font-size: 1.3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: var(--yellow);
+        transform: rotate(-6deg);
+    }
+
+    .center-text2 {
+        position: absolute;
+        bottom: 26%;
+        left: 35%;
+        font-size: 1.3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: var(--yellow);
+    }
+
+    .cell-pic {
+        position: absolute;
+        right: 0%;
+        bottom: 101%;
+        width: 170px;
+    }
+
+    .big-circle-outer {
+        height: 240px;
+        width: 240px;
+        position: absolute;
+        top: -50%;
+        left: 55%;
+        background-color: var(--woodden);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .big-circle-inner {
+            height: 170px;
+            width: 170px;
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .big-circle-img {
+                width: 60%;
+                height: 60%;
+                border-radius: 50%;
+            }
+        }
+    }
+    .flower-shape {
+        position: absolute;
+        top: -53%;
+        left: 70%;
+        height: 100px;
+        width: 100px;
+        filter: drop-shadow(0 0 2px black);
+    }
+
+    .lungs-big {
+        width: 230px;
+        position: absolute;
+        right: 7%;
+        top: -20%;
+        transform: rotate(-25deg);
+        opacity: 0.8;
+    }
+
+    .left-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    }
+}

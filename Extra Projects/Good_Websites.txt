@@ -1,4 +1,17 @@
 1. High quality Free Images & Video  => https://www.pexels.com/ 
 2. Ideas / Images / Videos / UI Idea => https://in.pinterest.com/
 3. Photoes, Videos, Vectors, Illustrations, Music, Sound Effect, 3D Models, Gifs => https://pixabay.com/
-  
+4. Fonts websites => dafont.com, fontsquirrel.com
+5. Free images => https://unsplash.com/
+6. Remove Background => remove.bg
+7. Best Websites => Awwwards
+8. Job search -> https://wellfound.com/
+9. Job search -> https://cutshort.io/
+10. Cubic bezier -> https://cubic-bezier.com/
+11. Icons Library -> Remix Icons
+12. Free API JSON Placeholder -> https://jsonplaceholder.typicode.com/
+13. Lorem Picsum images API -> https://picsum.photos/
+
+
+
+

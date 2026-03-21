@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  width: 100%;
+  min-height: 100%;
+  /* background-color: #222; */
+  background: linear-gradient(to right, #5d6871, #a1a5a6);
+  color: #eee;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.outer {
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgb(224, 224, 224);
+  transition: all 0.3s cubic-bezier(0.44, 0.8, 0.44, 1.27);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.inner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(224, 224, 224);
+  transition: all 0.3s cubic-bezier(0.58, 0.77, 0.44, 1.27);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}

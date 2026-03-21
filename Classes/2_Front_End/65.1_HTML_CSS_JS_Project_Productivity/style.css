@@ -1,0 +1,143 @@
+:root {
+  --pri: #222222;
+  --sec: #7b7b7b;
+  --ter1: #f8f8f8;
+  --ter2: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--ter1);
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0 40px;
+  background-color: var(--ter1);
+  padding-bottom: 50px;
+  color: var(--pri);
+  position: relative;
+}
+#wrapper img#user-profile {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  image-rendering: optimizeSpeed;
+  height: 85%;
+  width: 800px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .left {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+nav .left .logo {
+  width: 35px;
+}
+nav .left .logo img {
+  width: 100%;
+}
+nav .left .nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+nav .left .nav-links li a {
+  color: var(--pri);
+  text-decoration: none;
+}
+nav .right a {
+  color: var(--pri);
+  padding-left: 5px;
+}
+nav .right i {
+  color: var(--pri);
+  font-size: 22px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+main .left-line-container {
+  position: absolute;
+  top: 650px;
+  left: 0;
+  color: var(--sec);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+main .left-line-container .line {
+  width: 400px;
+  height: 2px;
+  background-color: var(--sec);
+}
+main .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 100px;
+  padding-top: 70px;
+  height: 650px;
+}
+main .content .achievements {
+  display: flex;
+  gap: 20px;
+}
+main .content .achievements .ach1 .ach-number,
+main .content .achievements .ach2 .ach-number {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 50px;
+  font-weight: 100;
+}
+main .content .achievements .ach1 .ach-text,
+main .content .achievements .ach2 .ach-text {
+  padding-left: 30px;
+  color: var(--sec);
+}
+main .content .hero-intro {
+  margin-bottom: 200px;
+}
+main .content .hero-intro h1 {
+  margin-top: 70px;
+  font-size: 220px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  line-height: 1;
+}
+main .content .hero-intro p {
+  font-size: 18px;
+  padding-left: 20px;
+}
+main .content .scroll {
+  font-size: 18px;
+}/*# sourceMappingURL=style.css.map */

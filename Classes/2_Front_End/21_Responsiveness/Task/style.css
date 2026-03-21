@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper {
+  height: 100vh;
+  max-width: 100vw;
+  padding: 15px;
+  background-color: rgb(40, 40, 40);
+}
+#wrapper .container {
+  height: calc(100vh - 30px);
+  width: calc(100vw - 30px);
+  background-color: rgb(40, 40, 40);
+}
+#wrapper .container .grid-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-rows: 1.7fr 1fr;
+  gap: 15px;
+  grid-template-areas: "left right-top right-top right-top" " left right-bottom1 right-bottom2 right-bottom3";
+}
+#wrapper .container .grid-container .item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+#wrapper .container .grid-container .item img {
+  width: 100%;
+}
+#wrapper .container .grid-container .item:hover {
+  box-shadow: 0 0 10px white;
+}
+#wrapper .container .grid-container #item1 {
+  grid-area: left;
+}
+#wrapper .container .grid-container #item1 img {
+  width: 200%;
+  position: relative;
+  right: 200px;
+}
+#wrapper .container .grid-container #item2 {
+  grid-area: right-top;
+}
+#wrapper .container .grid-container #item2 img {
+  width: 100%;
+}
+#wrapper .container .grid-container #item3 {
+  grid-area: right-bottom1;
+}
+#wrapper .container .grid-container #item3 img {
+  width: 110%;
+}
+#wrapper .container .grid-container #item4 {
+  grid-area: right-bottom2;
+}
+#wrapper .container .grid-container #item4 img {
+  width: 170%;
+  position: relative;
+  right: 60px;
+}
+#wrapper .container .grid-container #item5 {
+  grid-area: right-bottom3;
+}
+#wrapper .container .grid-container #item5 img {
+  width: 200%;
+}/*# sourceMappingURL=style.css.map */

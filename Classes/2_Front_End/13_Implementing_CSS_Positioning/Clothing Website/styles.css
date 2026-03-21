@@ -1,0 +1,156 @@
+@font-face {
+  font-family: helvetica;
+  src: url(./assets/Helvetica.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: helvetica;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(to bottom left in oklab, rgb(255, 208, 155), rgb(152, 186, 255));
+}
+
+img {
+    width: 40px;
+}
+
+main nav {
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  display: flex;
+  align-items: center;
+}
+
+nav h1 img {
+  margin-left: 10px;
+  width: 40px;
+}
+
+nav h1 span {
+  color: white;
+}
+
+nav .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav .center a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+nav .center a img {
+  width: 17px;
+}
+
+button.getApp {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 1pt;
+  padding: 5px 30px;
+  border: 2px solid rgb(50, 50, 50);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.getApp img {
+    margin-left: 7px;
+    width: 25px;
+}
+
+button.getApp:hover {
+  background-color: whitesmoke;
+}
+
+.section1 {
+    width: 100%;
+    padding-block: 40px;
+    background-image: url(./assets/shirt.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 85vh;
+}
+
+.first, .second {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    left: 42%;
+}
+
+.first .left, .second .left {
+    transform: rotateY(180deg);
+}
+
+.first {
+    transform: translateX(-16%);
+}
+
+
+.second {
+    margin-top: 50px;
+    transform: translateX(16%);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 100px;
+}
+
+.main-header .left-content .stars {
+    display: flex;
+    gap: 10px;
+}
+
+.main-header .left-content .stars .star {
+    width: 35px;
+}
+
+.main-header .left-content .below {
+    font-size: 4.5rem;
+    letter-spacing: 2pt;
+    line-height: 1;
+    word-spacing: 5pt;
+    position: relative;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    backdrop-filter: blur(10px);
+    background-color: whitesmoke;
+}
+
+

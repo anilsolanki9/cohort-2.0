@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="./image.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <form>
+        <input type="text" id="name" placeholder="Name" minlength="2" maxlength="20" required />
+        <small id="nameError">Your name should be at least 2 characters long</small>
+        <input type="email" name="email" id="email" placeholder="Email" required />
+        <input type="password" name="" id="password" placeholder="Password" required />
+        <!-- <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="male">Male</option>
+          <option value="male">Male</option>
+        </select> -->
+        <div class="custom-select">
+          <div class="selected">Select Gender</div>
+          <ul class="options">
+            <li data-value="male">Male</li>
+            <li data-value="female">Female</li>
+            <li data-value="other">Other</li>
+          </ul>
+        </div>
+        <textarea rows="5" name="message" id="message" placeholder="Write something...."></textarea>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weathry - Premium Weather Experience</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4814/4814268.png" type="image/png">
+  </head>
+  <body> 
+    <!-- Floating Particles -->
+    <script>
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = 15 + Math.random() * 10 + 's';
+        document.body.appendChild(particle);
+      }
+    </script>
+
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo">
+          <span class="logo-icon"><img src="./weather.png" alt=""></span>
+          <span>Weathry</span>
+        </div>
+        <div class="search-container">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search for any city..." />
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading" id="loadingState">
+        <div class="loading-spinner"></div>
+        <div>Fetching weather data...</div>
+      </div>
+
+      <!-- Main Content -->
+      <div id="mainContent">
+        <div class="main-grid">
+          <!-- Current Weather -->
+          <div class="weather-main">
+            <div class="weather-content">
+              <div class="weather-icon-container">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png"
+                  alt="weather"
+                  class="weather-icon"
+                  id="mainWeatherIcon"
+                />
+              </div>
+              <div class="temperature" id="temperature">28°C</div>
+              <div class="weather-description" id="weatherDescription">Clear Sky</div>
+              <div class="location-time-info">
+                <div class="info-row">
+                  <span class="info-icon">📍</span>
+                  <span id="locationName">London, GB</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-icon">📅</span>
+                  <span id="dateTime">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlights -->
+          <div class="highlights-section">
+            <div class="section-title">Today's Highlights</div>
+            <div class="highlights-grid">
+              <!-- Wind Status -->
+              <div class="highlight-card">
+                <div class="card-header">Wind Status</div>
+                <div class="wind-visualization" id="windBars">
+                  <div class="wind-bar" style="height: 45%"></div>
+                  <div class="wind-bar" style="height: 65%"></div>
+                  <div class="wind-bar" style="height: 50%"></div>
+                  <div class="wind-bar" style="height: 75%"></div>
+                  <div class="wind-bar" style="height: 60%"></div>
+                  <div class="wind-bar" style="height: 85%"></div>
+                  <div class="wind-bar" style="height: 70%"></div>
+                </div>
+                <div class="card-main-value">
+                  <span id="windSpeed">7.90</span>
+                  <span class="card-unit">km/h</span>
+                </div>
+                <div class="card-description" id="windTime">Updated now</div>
+              </div>
+
+              <!-- UV Index -->
+              <div class="highlight-card">
+                <div class="card-header">UV Index</div>
+                <div class="uv-gauge-container">
+                  <div class="uv-gauge">
+                    <div class="uv-gauge-inner"></div>
+                    <div class="uv-needle" id="uvNeedle"></div>
+                  </div>
+                </div>
+                <div class="card-main-value">
+                  <span id="uvValue">5.5</span>
+                  <span class="card-unit">UV</span>
+                </div>
+                <div class="card-description" id="uvDescription">Moderate</div>
+              </div>
+
+              <!-- Sunrise & Sunset -->
+              <div class="highlight-card">
+                <div class="card-header">Sunrise & Sunset</div>
+                <div class="sun-times">
+                  <div class="sun-time-item">
+                    <span class="sun-emoji">🌅</span>
+                    <div class="sun-time-value" id="sunriseTime">6:30 AM</div>
+                  </div>
+                  <div class="sun-divider"></div>
+                  <div class="sun-time-item">
+                    <span class="sun-emoji">🌇</span>
+                    <div class="sun-time-value" id="sunsetTime">7:45 PM</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Humidity -->
+              <div class="highlight-card">
+                <div class="card-header">Humidity</div>
+                <div class="card-main-value">
+                  <span id="humidity">65</span>
+                  <span class="card-unit">%</span>
+                </div>
+                <div class="card-description">Dew point is <span id="dewPoint">18°C</span></div>
+              </div>
+
+              <!-- Visibility -->
+              <div class="highlight-card">
+                <div class="card-header">Visibility</div>
+                <div class="card-main-value">
+                  <span id="visibility">10</span>
+                  <span class="card-unit">km</span>
+                </div>
+                <div class="card-description" id="visibilityDesc">Excellent visibility</div>
+              </div>
+
+              <!-- Feels Like -->
+              <div class="highlight-card">
+                <div class="card-header">Feels Like</div>
+                <div class="card-main-value">
+                  <span id="feelsLike">30</span>
+                  <span class="card-unit">°C</span>
+                </div>
+                <div class="card-description" id="feelsLikeDesc">Similar to actual temperature</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 Day Forecast -->
+        <div class="forecast-section">
+          <div class="forecast-header">
+            <div class="forecast-title">7 Day Forecast</div>
+          </div>
+          <div class="forecast-grid" id="forecastGrid">
+            <!-- Forecast cards will be inserted here -->
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="footer">Made with ❤️ by Anil</div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Day 20 SCSS I
+- what is SCSS
+- syntax od SCSS
+- power of $variable in SCSS
+- @mixin and @import
+- _file.scss
+- nesting of selectors in scss
+- vs code setup for scss > install sass compiler (glenn marks)
+-  settings > search : live sass compiler
+- show output window > none
+- watch on launch (check)

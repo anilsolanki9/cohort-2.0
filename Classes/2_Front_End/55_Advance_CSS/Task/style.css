@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Reaktif";
+  src: url(./assets/Reaktif-ExtraBold.ttf);
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(16px, 1.5vw, 20px);
+}
+
+#wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-inline: 4rem;
+  position: relative;
+  padding-bottom: 120px;
+}
+
+.backgroundShape {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 40%;
+  height: 750px;
+  max-height: 90vh;
+  background-color: rgb(232, 232, 232);
+  border-radius: 0 0 50% 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .left {
+  display: flex;
+  align-items: baseline;
+  gap: 5rem;
+}
+nav .left > a {
+  font-family: Reaktif;
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+nav .left > a span {
+  font-size: 2.3rem;
+  color: rgb(255, 85, 0);
+}
+nav .left .center {
+  display: flex;
+  gap: 1.5rem;
+}
+nav .left .center a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+}
+nav .right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+nav .right div.cartDiv {
+  padding: 6px;
+  border-radius: 50px;
+  border: 1px solid rgba(184, 184, 184, 0.667);
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .right div.cartDiv div.bagIconDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(23, 23, 23);
+  border-radius: 50%;
+  padding: 5px;
+}
+nav .right div.cartDiv div.bagIconDiv i {
+  font-size: 15px;
+  color: white;
+}
+nav .right div.cartDiv span {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#section1 {
+  width: 100%;
+  height: 100%;
+  padding-top: 3.5rem;
+  position: relative;
+}
+#section1 .topLeft {
+  padding-left: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+#section1 .topLeft h2 {
+  font-family: Reaktif;
+  font-size: 2.5rem;
+}
+#section1 .topLeft i {
+  color: rgb(255, 200, 0);
+}
+#section1 .topLeft i:last-child {
+  color: rgb(196, 196, 196);
+}
+#section1 .topLeft .floatingLeftText {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 600;
+  transform-origin: left top;
+  transform: rotate(90deg);
+  top: 14px;
+  left: 15px;
+  color: rgb(64, 64, 64);
+}
+#section1 .colorsBlock {
+  display: inline-block;
+  transform-origin: top left;
+  transform: rotate(90deg);
+  position: absolute;
+  right: 100px;
+}
+#section1 .colorsBlock .colors {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+#section1 .colorsBlock .colors .color {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s linear;
+}
+#section1 .colorsBlock .colors .color > div {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+#section1 .colorsBlock .colors .color .color-blue {
+  background-color: rgb(0, 115, 255);
+}
+#section1 .colorsBlock .colors .color .color-yellow {
+  background-color: rgb(255, 255, 99);
+}
+#section1 .colorsBlock .colors .color .color-red {
+  background-color: rgb(255, 66, 66);
+}
+#section1 .colorsBlock .colors .color .color-dark {
+  background-color: rgb(99, 99, 99);
+}
+#section1 .colorsBlock .colors .color:nth-child(2) {
+  background-color: rgb(15, 15, 15);
+}
+#section1 .colorsBlock .colors .color:hover {
+  background-color: rgb(15, 15, 15) !important;
+}
+#section1 .colorsBlock .colors:has(.color:hover) .color {
+  background-color: transparent;
+}
+#section1 .colorsBlock p {
+  padding-left: 15px;
+  font-weight: 700;
+}
+#section1 .center-image {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  left: 50%;
+  transform: translate(-50%);
+}
+#section1 .center-image img {
+  width: 100%;
+  transform: rotateY(180deg);
+}
+#section1 .size-div {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
+  top: 80px;
+}
+#section1 .size-div p {
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(90deg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-top: 10px;
+  text-wrap: nowrap;
+}
+#section1 .size-div p span {
+  color: gray;
+}
+#section1 .size-div .size-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+#section1 .size-div .size-boxes .item {
+  font-size: smaller;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1.5px solid rgb(209, 209, 209);
+}
+#section1 .size-div .size-boxes .item-1,
+#section1 .size-div .size-boxes .item-4 {
+  background-color: rgb(209, 209, 209);
+}
+#section1 .size-div .size-boxes .item-2 {
+  border-color: black;
+  background-color: black;
+  color: white;
+}
+#section1 .discount-tablet {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  height: 230px;
+  position: relative;
+  padding: 50px 25px;
+  border: 1.5px solid rgb(36, 36, 36);
+  border-radius: 90px;
+}
+#section1 .discount-tablet h2 span {
+  font-size: 0.9rem;
+}
+#section1 .discount-tablet > p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+#section1 .discount-tablet .floating-round {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  font-size: 0.7rem;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#section1 .discount-tablet .floating-round .arrow-box {
+  position: absolute;
+  left: 0;
+}
+#section1 .price-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  right: 0;
+  top: 400px;
+}
+#section1 .price-box p {
+  font-weight: 700;
+  text-decoration: line-through;
+  color: rgb(255, 170, 0);
+  padding-bottom: 0.5rem;
+}
+#section1 .price-box h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  padding-bottom: 1.5rem;
+}
+#section1 .price-box .buy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+#section1 .price-box .heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(214, 214, 214);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+#section1 .price-box .heart i {
+  font-size: 1.2rem;
+  position: relative;
+  top: 1px;
+}
+#section1 .price-box .buyBtn {
+  height: 40px;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 50px;
+  color: white;
+}
+#section1 .price-box .buyBtn span.text {
+  font-size: 0.8rem;
+  padding-right: 10px;
+}
+#section1 .price-box .buyBtn span.arrow {
+  background-color: orangered;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+#section1 .images {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 80px;
+  position: relative;
+}
+#section1 .images .image {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 30px;
+  position: absolute;
+}
+#section1 .images .image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#section1 .images .img1 {
+  top: 10%;
+  left: 50px;
+  rotate: -5deg;
+}
+#section1 .images .img2 {
+  top: 30%;
+  left: 250px;
+  rotate: 5deg;
+}
+#section1 .images .img3 {
+  top: 30%;
+  right: 100px;
+  rotate: 10deg;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap");
+
+/* font-family: "Outfit", sans-serif; headings */
+/* font-family: "Plus Jakarta Sans", sans-serif; body */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-light: linear-gradient(to right, lightblue, royalblue);
+  --text-light: #1e1e1e;
+
+  --bg-dark: linear-gradient(to right, rgb(34, 47, 79), rgb(72, 36, 128));
+  --text-dark: #eeeeee;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  transition: all 0.3s ease;
+}
+
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.219);
+  border: 1px solid white;
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: aquamarine;
+  font-weight: 700;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    scale: 1.05;
+  }
+  &:active {
+    scale: 0.95;
+  }
+}
+
+body.dark .card button {
+  background-color: deepskyblue;
+}

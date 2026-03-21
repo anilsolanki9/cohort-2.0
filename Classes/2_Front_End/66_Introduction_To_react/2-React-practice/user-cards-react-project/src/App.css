@@ -1,0 +1,109 @@
+:root {
+  --pri: #1b3c53;
+  --sec: #e3e3e3;
+  --tri1: #234c6a;
+  --tri2: #456882;
+}
+
+* {
+  color: var(--sec);
+}
+
+.user-card {
+  background-color: var(--tri2);
+  width: 270px;
+  /* height: 330px; */
+  border-radius: 20px;
+  border: 2px solid var(--sec);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-card .user-img {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-card .user-img img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--sec);
+}
+
+.user-card .name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.user-card .role {
+  opacity: 0.6;
+  font-weight: 100;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.user-card .about {
+  margin-top: 10px;
+  padding: 0 25px;
+  text-align: justify;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.user-card .btn-container {
+  display: flex;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.user-card .btn-container .btn {
+  padding: 10px 20px;
+  border: 2px solid var(--sec);
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.user-card .btn-container .btn:hover {
+  scale: 1.05;
+}
+
+.user-card .btn-container .btn:active {
+  scale: 0.96;
+  box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.586);
+}
+
+.user-card .btn-container .btn.dark {
+  background-color: var(--sec);
+  color: var(--pri);
+}
+
+.user-card .social-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px 5px 10px;
+  gap: 30px;
+}
+
+.user-card .social-links a {
+  text-decoration: none;
+  font-size: 25px;
+  transition: all 0.3s ease;
+}
+
+.user-card .social-links a:hover {
+  scale: 1.1;
+  text-shadow: 1px 1px 3px var(--pri);
+}

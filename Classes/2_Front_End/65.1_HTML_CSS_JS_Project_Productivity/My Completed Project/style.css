@@ -1,0 +1,851 @@
+:root {
+  /* --pri: #f8f4e1;
+  --sec: #381c0a;
+  --tri1: #feba17;
+  --tri2: #74512d; */
+  --red: red;
+  --green: rgb(26, 190, 100);
+  --blue: rgb(0, 149, 255);
+}
+
+@font-face {
+  font-family: aeonik;
+  font-weight: 200;
+  src: url(./assets/fonts/AeonikTRIAL-Light.otf);
+}
+@font-face {
+  font-family: aeonik;
+  font-weight: 500;
+  src: url(./assets/fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+  font-family: aeonik;
+  font-weight: 700;
+  src: url(./assets/fonts/AeonikTRIAL-Bold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: aeonik;
+  color: var(--pri);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--sec);
+}
+
+/* Modern Scrollbar Styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pri) rgba(0, 0, 0, 0.1);
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--pri), var(--sec));
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--sec), var(--tri1));
+  border-width: 1px;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, var(--tri1), var(--tri2));
+}
+
+/* Thin variant for smaller containers */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Animated gradient variant */
+.scrollbar-animated::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--pri), var(--sec), var(--tri1), var(--tri2));
+  background-size: 300% 300%;
+  animation: scrollbarGradient 3s ease infinite;
+}
+
+@keyframes scrollbarGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  *::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+#main {
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+nav .nav-inner {
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* backdrop-filter: blur(10px);
+  box-shadow: inset 0 5px 5px rgba(255, 255, 255, 0.223), inset 0 -5px 5px rgba(0, 0, 0, 0.239);
+  background-color: rgba(255, 255, 255, 0.103); */
+  background-color: var(--tri2);
+}
+
+.nav-inner h2 {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.nav-inner .theme {
+  padding: 10px 15px;
+  background-color: var(--pri);
+  border-radius: 10px;
+  color: var(--sec);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.theme:active {
+  scale: 0.95;
+}
+
+section.allElems {
+  width: 100%;
+  padding: 40px;
+  padding-top: 100px;
+  position: absolute;
+}
+
+section.allElems header {
+  width: 100%;
+  padding: 20px 40px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-size: contain;
+  background-position: center;
+}
+
+header .header1 .date {
+  font-size: 24px;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.489);
+}
+
+header .header1 .day-time {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.502);
+}
+
+header .header1 .current-location {
+  font-size: 20px;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.502);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+header .header1 .current-location:hover {
+  color: var(--tri2);
+}
+
+header .header2 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.502);
+}
+
+header .header2 .temp {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+header .header2 .condition {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+header .header2 h3 {
+  font-size: 18px;
+  font-weight: 100;
+  opacity: 0.9;
+}
+
+.allElems .allFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.elem {
+  background-color: var(--tri1);
+  border-radius: 10px;
+  width: 270px;
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.elem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.elem h2 {
+  position: absolute;
+  bottom: 4%;
+  right: 5%;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: aeonik;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.502);
+}
+
+.elem:active {
+  scale: 0.97;
+}
+
+.elem:hover {
+  box-shadow: 2px 2px 10px var(--tri2);
+}
+
+/* -------------------------------------------------------------------------- */
+/* full pages */
+
+.fullElem {
+  width: 100%;
+  height: 100%;
+  background-color: var(--sec);
+  padding: 40px;
+  padding-top: 110px;
+  display: none;
+  position: fixed;
+}
+
+.back {
+  position: absolute;
+  right: 5%;
+  z-index: 10;
+  background-color: var(--red);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 25px;
+  font-weight: 700;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.back:active {
+  scale: 0.95;
+}
+
+/* -------------------------------------------------------------------------- */
+/* toddo list full page */
+
+.todo-list-fullPage h2 {
+  font-size: 40px;
+}
+
+.todo-list-fullPage .todo-container {
+  width: 100%;
+  height: 85%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-list-fullPage .todo-container .addTask {
+  width: 33%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 10px;
+}
+
+.todo-container .addTask form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  height: 100%;
+}
+
+.todo-container .addTask form input#task-input {
+  padding: 15px 25px;
+  font-size: 28px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--pri);
+  color: var(--sec);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.todo-container .addTask form textarea {
+  padding: 15px 25px;
+  font-size: 25px;
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: var(--pri);
+  color: var(--sec);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.todo-container .addTask form .mark-imp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  gap: 20px;
+}
+
+.todo-container .addTask form .mark-imp input {
+  scale: 2;
+  cursor: pointer;
+  accent-color: var(--tri1);
+}
+
+.todo-container .addTask form .mark-imp label {
+  font-size: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.todo-container .addTask form button {
+  padding: 15px 25px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background-color: var(--tri1);
+  color: var(--pri);
+  border-radius: 6px;
+  transition: all ease 0.3s;
+}
+
+.todo-container .addTask form button:active {
+  scale: 0.95;
+}
+
+.todo-list-fullPage .todo-container .allTask {
+  width: 65%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  overflow: auto;
+  gap: 10px;
+}
+
+.todo-container .allTask::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-container .allTask .task {
+  width: 100%;
+  padding: 20px 30px;
+  background-color: var(--pri);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.task h5 {
+  color: var(--sec);
+  font-size: 30px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.task h5 span {
+  font-size: 13px;
+  background-color: var(--red);
+  color: var(--pri);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.task h5 span.true {
+  opacity: 1;
+}
+
+.task h5 span.false {
+  opacity: 0;
+}
+
+.task button {
+  background-color: var(--green);
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.task button:active {
+  scale: 0.97;
+}
+
+/* -------------------------------------------------------------------------- */
+/* daily planner full page */
+
+.daily-planner-fullPage h2 {
+  font-size: 40px;
+}
+
+.daily-planner-fullPage .day-planner {
+  width: 100%;
+  height: 85%;
+  background-color: var(--tri2);
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: auto;
+  row-gap: 15px;
+}
+
+.daily-planner-fullPage .day-planner::-webkit-scrollbar {
+  display: none;
+}
+
+.daily-planner-fullPage .day-planner .day-planner-time {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+}
+
+.day-planner-time input {
+  padding: 20px 45px;
+  padding-top: 34px;
+  width: 100%;
+  background-color: var(--sec);
+  border-radius: 5px;
+  border: none;
+  font-size: 35px;
+  outline: none;
+}
+
+.day-planner-time p {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  color: var(--tri1);
+  font-size: 16px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* motivation page */
+
+.motivational-fullPage .motivation-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivation-container .motivation-wrapper {
+  width: 70%;
+  background-color: var(--tri2);
+  padding: 17px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.motivation-container .motivation-wrapper::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--tri1);
+  filter: blur(50px);
+  border-radius: 30px;
+}
+
+.motivation-container .motivation-wrapper::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: var(--tri1);
+  border-radius: 30px;
+}
+
+.motivation-wrapper .motivation-1 {
+  background-color: var(--sec);
+  display: flex;
+  padding: 10px;
+  border-radius: 15px;
+  width: fit-content;
+  position: relative;
+  z-index: 10;
+}
+
+.motivation-wrapper .motivation-1 h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.motivation-wrapper .motivation-2 {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.motivation-2 h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--sec);
+}
+
+.motivation-wrapper .motivation-3 {
+  background-color: var(--sec);
+  display: flex;
+  width: fit-content;
+  justify-content: flex-end;
+  border-radius: 15px;
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.motivation-wrapper .motivation-3 h2 {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px;
+  width: fit-content;
+}
+
+.motivation-wrapper img {
+  position: absolute;
+  height: 58px;
+  right: 5%;
+  top: 2%;
+  z-index: 10;
+  opacity: 0.3;
+}
+
+/* -------------------------------------------------------------------------- */
+/* pomodoro timer */
+
+.pomodoro-fullPage h2 {
+  font-size: 40px;
+}
+
+.pomodoro-fullPage .pomo-timer {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomo-timer .session {
+  padding: 13px 20px;
+  background-color: var(--green);
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pomodoro-fullPage .pomo-timer h1 {
+  font-size: 170px;
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+
+.pomo-timer .pomo-btn {
+  padding: 30px 60px;
+  background-color: var(--tri1);
+  width: fit-content;
+  position: relative;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.pomodoro-fullPage .pomo-timer .pomo-btn button {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  height: 100%;
+  width: 100.6%;
+  color: var(--tri1);
+  background-color: var(--tri2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 700;
+  border-radius: 8px;
+  user-select: none;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  border: none;
+}
+
+.pomodoro-fullPage .pomo-timer .pomo-btn button:active {
+  top: 0px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* daily goals */
+
+.daily-goals-fullPage h2 {
+  font-size: 40px;
+}
+
+.daily-goals-fullPage .daily-goals-container {
+  width: 100%;
+  height: 80%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.daily-goals-fullPage .daily-goals-container .addGoal {
+  width: 33%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 10px;
+}
+
+.daily-goals-fullPage .daily-goals-container .addGoal form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.daily-goals-fullPage .daily-goals-container .addGoal form textarea {
+  flex: 1;
+  resize: none;
+  padding: 15px 25px;
+  font-size: 25px;
+  font-weight: 600;
+  max-width: 100%;
+  min-width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--pri);
+  color: var(--sec);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.daily-goals-fullPage .daily-goals-container .addGoal form .mark-imp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  gap: 30px;
+}
+
+.daily-goals-container .addGoal form .mark-imp input {
+  scale: 2;
+  cursor: pointer;
+  accent-color: var(--tri1);
+}
+
+.daily-goals-container .addGoal form .mark-imp label {
+  font-size: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.daily-goals-container .addGoal form button {
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background-color: var(--tri1);
+  color: var(--pri);
+  border-radius: 6px;
+  transition: all ease 0.3s;
+}
+
+.daily-goals-container .addGoal form button:active {
+  scale: 0.95;
+}
+
+.daily-goals-container .allGoals {
+  width: 65%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 10px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 49% 49%;
+  justify-content: space-between;
+  grid-template-rows: 90%;
+  grid-auto-rows: minmax(90%, auto);
+  padding: 25px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.daily-goals-container .allGoals::-webkit-scrollbar {
+  display: none;
+}
+
+.daily-goals-container .allGoals .goal {
+  padding: 20px 30px;
+  background-color: var(--pri);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  position: relative;
+}
+
+.goal h5 {
+  color: var(--sec);
+  font-size: 25px;
+  flex: 1;
+  width: 100%;
+  overflow-wrap: break-word;
+  gap: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow: auto;
+}
+
+.goal h5 .allGoals .goal span.goal-number {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: var(--sec);
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.allGoals .goal span.imp {
+  font-size: 13px;
+  background-color: var(--red);
+  color: var(--pri);
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: fit-content;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.allGoals .goal span.true {
+  opacity: 1;
+}
+
+.allGoals .goal span.false {
+  opacity: 0;
+}
+
+.allGoals .goal button {
+  width: fit-content;
+  background-color: var(--green);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.allGoals .goal button:active {
+  scale: 0.97;
+}

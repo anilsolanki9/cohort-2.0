@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 600px;
+  perspective: 600px;
+  transform-style: preserve-3d;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  transform-style: preserve-3d;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.card {
+  width: 340px;
+  height: 460px;
+  background-color: transparent;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .text {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 65%;
+  left: 30px;
+  text-shadow: 2px 2px 5px black;
+  transition: all 0.2s;
+}
+
+.card .text p {
+  width: 80%;
+}
+
+.glow {
+  position: absolute;
+  width: 340px;
+  height: 460px;
+  background: black;
+  z-index: -100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  transition: all 0.2s;
+}
+
+.card::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 2.5s linear infinite;
+  transition: all 0.2s ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.card::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  inset: 7px;
+  border-radius: 14px;
+  background: url(./images/vecteezy_black-anime-crew_66393801.png), linear-gradient(to top, black, black);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.card:hover .text {
+  color: rgb(187, 68, 208);
+  text-shadow: 2px 2px 1px black;
+}
+
+.card:hover::before {
+  background: conic-gradient(
+    from 0deg,
+    rgb(114, 17, 158),
+    rgb(71, 11, 99),
+    rgb(70, 11, 97),
+    rgb(76, 11, 107),
+    rgb(223, 160, 252),
+    rgb(223, 162, 252),
+    rgb(114, 17, 158),
+    rgb(114, 17, 158),
+    rgb(114, 17, 158),
+    rgb(114, 17, 158),
+    rgb(114, 17, 158),
+    rgb(114, 17, 158)
+  );
+}
+
+.card:hover ~ .glow {
+  background: rgba(205, 134, 223, 0.76);
+}

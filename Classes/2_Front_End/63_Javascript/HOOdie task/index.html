@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weathry - Modern Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo"><span>⛅</span> Weathry</div>
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" placeholder="Search location..." />
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="current-weather">
+          <img src="https://cdn-icons-png.flaticon.com/512/3222/3222807.png" alt="weather" class="weather-icon" />
+          <div class="temperature">28°C</div>
+          <div class="weather-desc">Rainy Storm Clouds</div>
+          <div class="location-info">
+            <span>📍</span>
+            <span id="location-country">Florida, US</span>
+          </div>
+          <div class="location-info">
+            <span>📅</span>
+            <span class="date-time">24 July, 2022 5:01 AM</span>
+          </div>
+        </div>
+
+        <div class="highlights">
+          <div class="highlight-title">Today's Highlights</div>
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <div class="card-title">Wind Status</div>
+              <div class="wind-chart">
+                <div class="wind-bar" style="height: 40%"></div>
+                <div class="wind-bar" style="height: 60%"></div>
+                <div class="wind-bar" style="height: 45%"></div>
+                <div class="wind-bar" style="height: 70%"></div>
+                <div class="wind-bar" style="height: 55%"></div>
+                <div class="wind-bar" style="height: 80%"></div>
+                <div class="wind-bar" style="height: 65%"></div>
+              </div>
+              <div class="card-value"><span class="wind-value">7.90</span> <span class="card-unit">km/h</span></div>
+              <div class="card-subtitle wind-time">5:01 AM</div>
+            </div>
+
+            <div class="highlight-card">
+              <div class="card-title">UV Index</div>
+              <div class="uv-gauge">
+                <div class="gauge-arc">
+                  <div class="gauge-center"></div>
+                </div>
+              </div>
+              <div class="card-value"><span class="uv-value">5.50</span> <span class="card-unit">UV</span></div>
+            </div>
+
+            <div class="highlight-card">
+              <div class="card-title">Sunrise & Sunset</div>
+              <div class="sunrise-sunset">
+                <div class="sun-time">
+                  <div class="sun-icon">🌅</div>
+                  <div style="font-size: 14px" id="sunrise-time">5:50 AM</div>
+                </div>
+                <div style="opacity: 0.3">─────</div>
+                <div class="sun-time">
+                  <div class="sun-icon">🌇</div>
+                  <div style="font-size: 14px" id="sunset-time">6:30 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="highlight-card">
+              <div class="card-title">Humidity</div>
+              <div class="card-value"><span class="humidity-value">84</span><span class="card-unit">%</span></div>
+              <div class="card-subtitle">The dew point is <span id="dewPoint">27°</span> right now</div>
+            </div>
+
+            <div class="highlight-card">
+              <div class="card-title">Visibility</div>
+              <div class="card-value"><span class="haze-value">03</span> <span class="card-unit">km</span></div>
+              <div class="card-subtitle haze-effect-text">Haze is affecting visibility</div>
+            </div>
+
+            <div class="highlight-card">
+              <div class="card-title">Feels Like</div>
+              <div class="card-value feels-like-value">42°</div>
+              <div class="card-subtitle feels-humidity-text">Humidity is making it feel hotter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="forecast-section">
+        <div class="section-header">
+          <div class="section-title">7 Days Forecast</div>
+        </div>
+        <div class="forecast-grid">
+          <!-- Forecast cards will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

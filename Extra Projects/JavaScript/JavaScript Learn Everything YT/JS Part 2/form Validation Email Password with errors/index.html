@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Welcome back</h1>
+      <p class="subtitle">Sign in to your account</p>
+
+      <form autocomplete="off" id="loginForm" novalidate>
+        <!-- EMAIL -->
+        <div class="input-group">
+          <label for="email">Email</label>
+          <div class="input-wrap">
+            <input type="email" id="email" placeholder="you@example.com" autocomplete="off" />
+            <span class="status-icon ok">✅</span>
+            <span class="status-icon fail">❌</span>
+          </div>
+          <span class="message" id="emailMsg"></span>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="password" placeholder="Min. 8 characters" />
+            <span class="status-icon ok">✅</span>
+            <span class="status-icon fail">❌</span>
+          </div>
+          <span class="message" id="passwordMsg"></span>
+          <div class="strength-bar-wrap">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+          </div>
+          <span class="strength-label" id="strengthLabel"></span>
+        </div>
+
+        <button type="submit" id="submitBtn">Sign In</button>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

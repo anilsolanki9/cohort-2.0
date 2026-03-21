@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuristic Productivity Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="animated-bg"></div>
+
+    <nav>
+      <div class="nav-inner">
+        <h2>✨ Productivity Dashboard</h2>
+        <button class="theme-btn">Change Theme</button>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <div class="weather-header">
+        <div class="weather-left">
+          <h1 class="date">Loading...</h1>
+          <h2 class="day-time">Loading...</h2>
+          <h3 class="location">Jodhpur, RJ</h3>
+        </div>
+        <div class="weather-right">
+          <div class="temp">--°C</div>
+          <div class="condition">--</div>
+          <h3 class="precipitation">Heat Index: --%</h3>
+          <h3 class="humidity">Humidity: --%</h3>
+          <h3 class="wind">Wind: -- km/h</h3>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-modal="todo">
+          <i class="ri-task-line feature-icon"></i>
+          <h2>Todo List</h2>
+        </div>
+        <div class="feature-card" data-modal="planner">
+          <i class="ri-calendar-line feature-icon"></i>
+          <h2>Daily Planner</h2>
+        </div>
+        <div class="feature-card" data-modal="quotes">
+          <i class="ri-lightbulb-line feature-icon"></i>
+          <h2>Motivation Quotes</h2>
+        </div>
+        <div class="feature-card" data-modal="timer">
+          <i class="ri-timer-line feature-icon"></i>
+          <h2>Pomodoro Timer</h2>
+        </div>
+        <div class="feature-card" data-modal="goals">
+          <i class="ri-trophy-line feature-icon"></i>
+          <h2>Daily Goals</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toodo Modal -->
+    <div class="modal" id="todo-modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('todo-modal')">
+          <i class="ri-close-line"></i>
+        </button>
+        <h2 class="modal-title">Your Task List</h2>
+        <div class="todo-container">
+          <div class="add-section">
+            <form id="todo-form">
+              <input type="text" id="todo-input" placeholder="Task title..." required />
+              <textarea id="todo-details" placeholder="Task details..." rows="4"></textarea>
+              <div class="checkbox-group">
+                <input type="checkbox" id="todo-important" />
+                <label for="todo-important">Mark as Important</label>
+              </div>
+              <button type="submit" class="submit-btn">Add Task</button>
+            </form>
+          </div>
+          <div class="items-list" id="todo-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Planner Modal -->
+    <div class="modal" id="planner-modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('planner-modal')">
+          <i class="ri-close-line"></i>
+        </button>
+        <h2 class="modal-title">Plan Your Day</h2>
+        <div class="planner-grid" id="planner-grid"></div>
+      </div>
+    </div>
+
+    <!-- Quotes Modal -->
+    <div class="modal" id="quotes-modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('quotes-modal')">
+          <i class="ri-close-line"></i>
+        </button>
+        <h2 class="modal-title">Daily Motivation</h2>
+        <div class="quote-container">
+          <div class="quote-tag">Quote of the Day</div>
+          <div class="quote-text" id="quote-text">Loading inspiration...</div>
+          <div class="quote-author" id="quote-author">~ Anonymous</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timer Modal -->
+    <div class="modal" id="timer-modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('timer-modal')">
+          <i class="ri-close-line"></i>
+        </button>
+        <h2 class="modal-title">Pomodoro Timer</h2>
+        <div class="timer-container">
+          <div class="session-badge" id="session-badge">Work Session</div>
+          <div class="timer-display" id="timer-display">25:00</div>
+          <div class="timer-controls">
+            <button class="timer-btn" id="start-btn">
+              <span><i class="ri-play-fill"></i> Start</span>
+            </button>
+            <button class="timer-btn" id="pause-btn">
+              <span><i class="ri-pause-fill"></i> Pause</span>
+            </button>
+            <button class="timer-btn" id="reset-btn">
+              <span><i class="ri-restart-line"></i> Reset</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Goals Modal -->
+    <div class="modal" id="goals-modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('goals-modal')">
+          <i class="ri-close-line"></i>
+        </button>
+        <h2 class="modal-title">Daily Goals</h2>
+        <div class="goals-container">
+          <div class="add-section">
+            <form id="goals-form">
+              <textarea id="goal-input" placeholder="Enter your goal..." rows="6" required></textarea>
+              <div class="checkbox-group">
+                <input type="checkbox" id="goal-important" />
+                <label for="goal-important">Mark as Important</label>
+              </div>
+              <button type="submit" class="submit-btn">Add Goal</button>
+            </form>
+          </div>
+          <div class="goals-grid" id="goals-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border {
+    width: 600px;
+    height: 4px;
+    /* box-shadow: 0 0 0 1px red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: row-resize;
+}
+
+.line {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(12, 237, 237);
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.border:hover .line {
+    width: 100%;
+}

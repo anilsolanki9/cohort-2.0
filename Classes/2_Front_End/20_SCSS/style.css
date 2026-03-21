@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
+#wrapper {
+  height: 97.5vh;
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+}
+#wrapper .box {
+  height: 100%;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+  border-radius: 20px;
+}
+#wrapper .box:hover {
+  flex-grow: 1.6;
+  box-shadow: 2px 3px 10px 5px rgba(31, 31, 31, 0.4509803922), 0 0 0 2px white;
+  cursor: pointer;
+}
+#wrapper div:nth-child(1) {
+  background-image: url(./Thor.jpg);
+}
+#wrapper div:nth-child(2) {
+  background-image: url(./moonKnight.jpg);
+}
+#wrapper div:nth-child(3) {
+  background-image: url(./ironman.jpg);
+}
+#wrapper div:nth-child(4) {
+  background-image: url(./cat.jpg);
+}
+#wrapper div:nth-child(5) {
+  background-image: url(./drDOOM2.jpg);
+}
+
+@media (max-width: 700px) {
+  #wrapper {
+    flex-wrap: wrap;
+  }
+  #wrapper .box {
+    width: 45vw;
+    height: 500px;
+  }
+  #wrapper .box:hover {
+    flex-grow: 1;
+    transform: scale(1.02);
+  }
+}
+.blue-btn {
+  width: 50px;
+  height: 140px;
+}/*# sourceMappingURL=style.css.map */

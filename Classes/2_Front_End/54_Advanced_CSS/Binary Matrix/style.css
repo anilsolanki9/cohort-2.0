@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: rgb(23, 240, 23);
+  perspective: 600px;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  margin: 10;
+}
+
+.line div {
+  line-height: 0.8;
+  font-size: 1.4rem;
+}
+
+

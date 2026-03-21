@@ -1,0 +1,653 @@
+@font-face {
+  font-family: sans;
+  src: url(./assets/sans.woff2);
+}
+@font-face {
+  font-family: roboto;
+  src: url(./assets/Roboto.woff2);
+}
+:root {
+  --blue1: #0468d7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(14px, 1vw + 0.25rem, 18px);
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: sans;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main > section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main > section > div {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 1rem;
+}
+main section.view0 div.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+main section.view0 div.nav .left img {
+  cursor: pointer;
+  width: 5rem;
+}
+main section.view0 div.nav .right {
+  display: flex;
+  gap: 0.5rem;
+}
+main section.view0 div.nav .right .desktop-only {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 50px;
+  display: none;
+  transition: all 0.2s ease;
+}
+main section.view0 div.nav .right .btn-primary {
+  background-color: #0468d7;
+  color: white;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid #0468d7;
+}
+main section.view0 div.nav .right .desktop-only:hover {
+  background-color: rgba(179, 214, 255, 0.137254902);
+  color: #0468d7;
+}
+main section.view0 div.nav .right .btn-primary:hover {
+  background-color: #ffffff;
+  color: var(--blue1);
+}
+main section.view0 div.nav .right .mobile-only {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+main section.view0 div.nav .right .mobile-only:hover {
+  background-color: rgba(179, 214, 255, 0.0745098039);
+  color: #0468d7;
+}
+main section.view1 {
+  background: linear-gradient(35deg, #fcdde8, #f3fcff 60%);
+}
+main section.view1 div.container {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+main section.view1 div.container div img {
+  width: 100%;
+}
+main section.view1 div.container h2 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 3rem;
+  line-height: 1;
+}
+main section.view1 div.container p {
+  text-align: center;
+  grid-column: 1/-1;
+  font-size: 2.4rem;
+  padding: 3rem 2rem;
+}
+main section.view2 div.container {
+  padding: 4rem 0;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  margin: 0 4rem;
+}
+main section.view2 div.container .card {
+  padding-top: 1.5rem;
+  padding-right: 3rem;
+  border-top: 0.3rem solid rgba(223, 227, 227, 0.74);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+main section.view2 div.container .card h2 {
+  font-size: 1.7rem;
+  padding-bottom: 1.2rem;
+}
+main section.view2 div.container .card p {
+  font-family: roboto;
+  color: #4a4a4a;
+  padding-bottom: 4rem;
+  font-size: 1.2rem;
+}
+main section.view2 div.container .card div img {
+  width: 100%;
+}
+main section.view3 .container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  padding: 0 4rem;
+  margin: 2rem 0;
+  align-items: center;
+}
+main section.view3 .container .left h3 {
+  font-size: larger;
+  color: #4a4a4a;
+  padding-bottom: 1rem;
+}
+main section.view3 .container .left h1 {
+  font-size: 3.8rem;
+  padding-bottom: 1.5rem;
+  line-height: 1;
+}
+main section.view3 .container .left > p {
+  font-family: roboto;
+  font-size: 1.2rem;
+  color: rgb(95, 95, 95);
+  padding-right: 4.5rem;
+  text-align: justify;
+  padding-bottom: 1.5rem;
+}
+main section.view3 .container .left div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+main section.view3 .container .left div .button {
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--blue1);
+  color: var(--blue1);
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: roboto;
+  font-size: 0.9rem;
+  transition: all 0.2s linear;
+}
+main section.view3 .container .left div .button:hover {
+  color: white;
+  background-color: var(--blue1);
+}
+main section.view3 .container .left div .para {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+  transition: all 0.5s ease;
+}
+main section.view3 .container .left div .para:hover {
+  gap: 1rem;
+}
+main section.view3 .container .right {
+  display: flex;
+  justify-content: center;
+}
+main section.view3 .container .right img {
+  width: 85%;
+}
+main section.view4 {
+  background: linear-gradient(35deg, #fcfce2 40%, #f5fbfe 90%);
+}
+main section.view4 .container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  padding: 0 2rem;
+  margin: 3rem 0;
+  align-items: center;
+}
+main section.view4 .container .left {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+main section.view4 .container .left img {
+  width: 85%;
+}
+main section.view4 .container .right h3 {
+  font-size: larger;
+  color: #4a4a4a;
+  padding-bottom: 1rem;
+}
+main section.view4 .container .right h1 {
+  font-size: 3.8rem;
+  padding-bottom: 1.5rem;
+  line-height: 1;
+}
+main section.view4 .container .right > p {
+  font-family: roboto;
+  font-size: 1.2rem;
+  color: rgb(95, 95, 95);
+  padding-right: 3rem;
+  text-align: justify;
+  padding-bottom: 1.5rem;
+}
+main section.view4 .container .right div {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main section.view4 .container .right div .button {
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--blue1);
+  color: white;
+  background-color: var(--blue1);
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: roboto;
+  font-size: 0.9rem;
+  transition: all 0.2s linear;
+}
+main section.view4 .container .right div .button:hover {
+  color: var(--blue1);
+  background-color: white;
+}
+main section.view5 .container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  padding: 0 4rem;
+  margin: 2rem 0;
+  align-items: center;
+}
+main section.view5 .container .left h3 {
+  font-size: larger;
+  color: #4a4a4a;
+  padding-bottom: 1rem;
+}
+main section.view5 .container .left h1 {
+  font-size: 3.8rem;
+  padding-bottom: 1.5rem;
+  line-height: 1;
+}
+main section.view5 .container .left > p {
+  font-family: roboto;
+  font-size: 1.2rem;
+  color: rgb(95, 95, 95);
+  padding-right: 4.5rem;
+  text-align: justify;
+  padding-bottom: 1.5rem;
+}
+main section.view5 .container .left div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+main section.view5 .container .left div .button {
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--blue1);
+  color: var(--blue1);
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: roboto;
+  font-size: 0.9rem;
+  transition: all 0.2s linear;
+}
+main section.view5 .container .left div .button:hover {
+  color: white;
+  background-color: var(--blue1);
+}
+main section.view5 .container .left div .para {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+  transition: all 0.5s ease;
+}
+main section.view5 .container .left div .para:hover {
+  gap: 1rem;
+}
+main section.view5 .container .right {
+  display: flex;
+  justify-content: center;
+}
+main section.view5 .container .right img {
+  width: 85%;
+}
+main section.view6 {
+  background: linear-gradient(35deg, #fcfce2 40%, #f5fbfe 90%);
+}
+main section.view6 .container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  padding: 0 2rem;
+  margin: 3rem 0;
+  align-items: center;
+}
+main section.view6 .container .left {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+main section.view6 .container .left img {
+  width: 85%;
+}
+main section.view6 .container .right h3 {
+  font-size: larger;
+  color: #4a4a4a;
+  padding-bottom: 1rem;
+}
+main section.view6 .container .right h1 {
+  font-size: 3.8rem;
+  padding-bottom: 1.5rem;
+  line-height: 1;
+}
+main section.view6 .container .right > p {
+  font-family: roboto;
+  font-size: 1.2rem;
+  color: rgb(95, 95, 95);
+  padding-right: 3rem;
+  text-align: justify;
+  padding-bottom: 1.5rem;
+}
+main section.view6 .container .right div {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main section.view6 .container .right div .button {
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--blue1);
+  color: white;
+  background-color: var(--blue1);
+  border-radius: 50px;
+  font-weight: bold;
+  font-family: roboto;
+  font-size: 0.9rem;
+  transition: all 0.2s linear;
+}
+main section.view6 .container .right div .button:hover {
+  color: var(--blue1);
+  background-color: white;
+}
+main section.view7 {
+  padding: 5rem 2rem;
+}
+main section.view7 .box {
+  background-image: url(./assets/background.png);
+  background-color: #042449;
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 3rem;
+  color: white;
+  border-radius: 2rem;
+}
+main section.view7 .box h1 {
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+main section.view7 .box > p {
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
+}
+main section.view7 .box .bottom {
+  display: flex;
+  gap: 2rem;
+}
+main section.view7 .box .bottom .button {
+  color: var(--blue1);
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+main section.view7 .box .bottom .button:hover {
+  background-color: var(--blue1);
+  color: white;
+}
+main section.view7 .box .bottom .para {
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: roboto;
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+  transition: all 0.5s ease;
+}
+main section.view7 .box .bottom .para:hover {
+  gap: 1rem;
+}
+main section.view8 {
+  background-color: #f8f9fa;
+  padding: 5rem 0 2rem 0;
+}
+main section.view8 div.container div.box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2.5rem;
+}
+main section.view8 div.container div.box .left img {
+  width: 8rem;
+}
+main section.view8 div.container div.box .right {
+  padding-left: 1rem;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: space-between;
+}
+main section.view8 div.container div.box .right div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+main section.view8 div.container div.box .right div p {
+  color: #4a4a4a;
+  cursor: pointer;
+}
+main section.view8 div.container div.box .right div p:hover {
+  text-decoration: underline;
+}
+main section.view8 div.container div.box2 {
+  padding: 7rem 0 0 0;
+  color: #4a4a4a;
+}
+main section.view8 div.container div.box2 .top {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+main section.view8 div.container div.box2 .top i {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+main section.view8 div.container div.box2 .top i:hover {
+  color: #0468d7;
+}
+main section.view8 div.container div.box2 .line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(161, 168, 172, 0.537254902);
+}
+main section.view8 div.container div.box2 .bottom {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+main section.view8 div.container div.box2 .bottom .left {
+  width: 70%;
+  font-size: 0.8rem;
+}
+main section.view8 div.container div.box2 .bottom .right {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+main section.view8 div.container div.box2 .bottom .right a {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+main section.view8 div.container div.box2 .bottom .right a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  main section.view7 .container .box {
+    background-size: 100% 100%;
+  }
+}
+@media (min-width: 768px) {
+  main section.view0 div.nav div.right .desktop-only {
+    display: block;
+  }
+  main section.view0 div.nav div.right .mobile-only {
+    display: none;
+  }
+  main section.view8 div.container div.box {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: unset;
+  }
+  main section.view8 div.container div.box .right {
+    flex-direction: row;
+    padding-right: 5rem;
+  }
+  main section.view8 div.container div.box2 .top {
+    justify-content: flex-start;
+  }
+  main section.view8 div.container div.box2 .bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  main section.view1 div.container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "heading image" "para para";
+  }
+  main section.view1 div.container div {
+    grid-area: image;
+  }
+  main section.view1 div.container h2 {
+    grid-area: heading;
+    text-align: left;
+    padding-left: 3rem;
+    font-size: 3.5rem;
+  }
+  main section.view1 div.container p {
+    font-size: 2rem;
+    grid-area: para;
+    padding: 2rem 5rem;
+  }
+  main section.view2 div.container {
+    grid-template-columns: 32% 32% 32%;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+  main section.view2 div.container .card {
+    margin: 0;
+  }
+  main section.view2 div.container .card div img {
+    width: 100%;
+  }
+  main section.view3 .container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+    padding: 0 2rem;
+  }
+  main section.view3 .container .left {
+    padding-left: 2rem;
+    grid-area: left;
+  }
+  main section.view3 .container .right {
+    grid-area: right;
+  }
+  main section.view3 .container .right img {
+    padding-left: 4rem;
+    width: 95%;
+  }
+  main section.view4 .container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+  }
+  main section.view4 .container .left {
+    grid-area: left;
+    padding-bottom: 0rem;
+  }
+  main section.view4 .container .left img {
+    width: 100%;
+    padding-right: 6rem;
+  }
+  main section.view4 .container .right {
+    padding-left: 2rem;
+    grid-area: right;
+  }
+  main section.view5 .container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+    padding: 0 2rem;
+  }
+  main section.view5 .container .left {
+    padding-left: 2rem;
+    grid-area: left;
+  }
+  main section.view5 .container .right {
+    grid-area: right;
+  }
+  main section.view5 .container .right img {
+    padding-left: 4rem;
+    width: 95%;
+  }
+  main section.view6 .container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+  }
+  main section.view6 .container .left {
+    grid-area: left;
+    padding-bottom: 0rem;
+  }
+  main section.view6 .container .left img {
+    width: 100%;
+    padding-right: 6rem;
+  }
+  main section.view6 .container .right {
+    padding-left: 2rem;
+    grid-area: right;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notes-page {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  /* display: none; */
+}
+
+/* ── Left controls ── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ctrl-btn {
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+
+.ctrl-btn:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+  transform: scale(1.07);
+}
+
+/* ── Card stack ── */
+.card-stack {
+  position: relative;
+  width: 340px;
+  height: 240px;
+}
+
+.card {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  border-radius: 24px;
+  padding: 28px 28px 24px;
+  z-index: 1;
+  gap: 0;
+  transition: all 0.3s ease;
+}
+
+.card:nth-child(1) {
+  z-index: 100;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.326);
+}
+
+.card:nth-child(2) {
+  position: absolute;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  z-index: 9;
+  top: 0%;
+  transform: translateY(14px) scale(0.96);
+}
+
+.card:nth-child(3) {
+  position: absolute;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  top: 0%;
+  transform: translateY(14px) scale(0.96);
+  opacity: 0.6;
+  z-index: 8;
+  transform: translateY(30px) scale(0.9);
+}
+
+/* ── Avatar ── */
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+  border: 2px solid #f97316;
+}
+
+/* ── Name ── */
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+/* ── Info rows ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+
+.info-row span:last-child {
+  font-weight: 500;
+  color: #222;
+}
+
+/* ── Buttons ── */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.04);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-call {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.btn-message {
+  background: #dadada;
+  color: #111;
+}
+
+/* ── Right color dots ── */
+.color-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+.dot.emergency {
+  background: #ff5151;
+}
+.dot.important {
+  background: #f7be55;
+}
+.dot.urgent {
+  background: #a855f7;
+}
+.dot.no-rush {
+  background: #838383;
+}
+
+.dot.selected {
+  box-shadow: 0 0 0 2.5px rgb(9, 9, 9);
+}
+
+/* Page UI */
+
+.form-page {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* ── Card ── */
+.form-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+/* ── Fields ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.field input[type="text"] {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid #e4e4e4;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.field input[type="text"]::placeholder {
+  color: #b0b0b0;
+}
+
+.field input[type="text"]:focus {
+  border-color: #3e3e3e;
+}
+
+/* ── Categories ── */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid;
+  transition: background 0.2s ease;
+  user-select: none;
+}
+
+.category input[type="radio"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Individual category colors */
+.category.emergency {
+  color: #c0392b;
+  border-color: #e57373;
+  background: transparent;
+}
+.category.emergency:has(input:checked) {
+  background: #fdecea;
+}
+
+.emergency input {
+  accent-color: #c0392b;
+}
+
+.category.important {
+  color: #b7791f;
+  border-color: #f6ad55;
+  background: transparent;
+}
+.category.important:has(input:checked) {
+  background: #fffbeb;
+}
+
+.important input {
+  accent-color: #b7791f;
+}
+
+.category.urgent {
+  color: #553c9a;
+  border-color: #9f7aea;
+  background: transparent;
+}
+.category.urgent:has(input:checked) {
+  background: #faf5ff;
+}
+
+.urgent input {
+  accent-color: #553c9a;
+}
+
+.category.norush {
+  color: #555;
+  border-color: #ccc;
+  background: transparent;
+}
+.category.norush:has(input:checked) {
+  background: #f5f5f5;
+}
+
+.norush input {
+  accent-color: #555;
+}
+
+/* ── Buttons ── */
+.btn-create,
+.btn-close {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.btn-create {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.btn-close {
+  background: #ff5f5f;
+  color: #ffffff;
+  text-align: center;
+}
+
+.btn-create:hover,
+.btn-close:hover {
+  opacity: 0.88;
+}
+
+.btn-create:active,
+.btn-close:active {
+  transform: scale(0.98);
+}

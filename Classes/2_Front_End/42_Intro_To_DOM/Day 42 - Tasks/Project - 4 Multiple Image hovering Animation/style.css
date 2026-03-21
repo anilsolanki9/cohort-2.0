@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  color: #e6e6e6;
+}
+
+body {
+  background-color: #111111;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: lightskyblue;
+  color: honeydew;
+  font-weight: 900;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+button:active {
+  scale: 0.95;
+}

@@ -1,0 +1,371 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "groote";
+  src: url("./Groote-Regular.otf");
+}
+@font-face {
+  font-family: "clash";
+  src: url("./ClashGrotesk-Semibold.ttf");
+}
+@font-face {
+  font-family: "sign";
+  src: url("./Strokify Light - Demo.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #f5c900;
+  --secondary: #003472;
+  --bg: #0a0a0a;
+  --text-light: #ffffffee;
+  --img-url: url("./assets/1CSK.jpeg");
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--bg);
+}
+
+/* ── PAGE ── */
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* ── BACKGROUND IMAGE ── */
+.bg {
+  position: absolute;
+  inset: 0;
+  background: var(--img-url);
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.15);
+  transition: transform 12s ease;
+  z-index: 0;
+}
+
+.page:hover .bg {
+  transform: scale(1);
+}
+
+/* layered overlays */
+.bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 52, 114, 0.92) 0%, rgba(0, 52, 114, 0.6) 40%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 55%);
+  z-index: 2;
+}
+
+/* ── ACCENT STRIPE ── */
+.stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background: var(--primary);
+  z-index: 10;
+}
+
+/* ── CONTENT LAYOUT ── */
+.content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 70px 60px 90px;
+}
+
+/* ── TOP BAR ── */
+.top-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ipl-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ipl-badge .label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.ipl-badge .season {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  color: var(--text-light);
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.trophy-count {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.trophy-count .trophies {
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -1px;
+  filter: drop-shadow(0 2px 8px rgba(245, 201, 0, 0.5));
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.trophy-count .trophy-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+/* ── MAIN BODY ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.team-abbr {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: clamp(120px, 18vw, 220px);
+  line-height: 0.85;
+  color: var(--primary);
+  letter-spacing: -4px;
+  text-shadow: 0 0 80px rgba(245, 201, 0, 0.3), 0 6px 0 rgba(0, 52, 114, 0.8);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.team-full {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(22px, 3.5vw, 48px);
+  color: var(--text-light);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
+  margin: 24px 0;
+  animation: expandWidth 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* ── CAPTAIN ── */
+.captain-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.captain-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.75;
+}
+
+.captain-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(28px, 4vw, 54px);
+  color: var(--text-light);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+/* ── BOTTOM ROW ── */
+.bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.color-palette {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.2);
+}
+
+.color-swatch.primary-swatch {
+  background: var(--primary);
+}
+
+.color-swatch.secondary-swatch {
+  background: var(--secondary);
+}
+
+.palette-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.561);
+  font-weight: 500;
+}
+
+.watermark {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.448);
+  text-transform: uppercase;
+}
+
+/* ── CORNER DECORATION ── */
+.corner-deco {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 340px;
+  height: 340px;
+  border-top: 1.5px solid rgba(245, 201, 0, 0.12);
+  border-left: 1.5px solid rgba(245, 201, 0, 0.12);
+  border-top-left-radius: 4px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.corner-deco::before {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 220px;
+  height: 220px;
+  border-top: 1px solid rgba(245, 201, 0, 0.08);
+  border-left: 1px solid rgba(245, 201, 0, 0.08);
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+.noise {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 150px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes expandWidth {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 120px;
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}/*# sourceMappingURL=style.css.map */

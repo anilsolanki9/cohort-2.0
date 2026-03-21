@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="./image.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <form action="">
+        <input type="text" placeholder="Enter name" />
+        <input type="text" placeholder="Enter age" />
+        <input type="text" placeholder="Enter gender" list="opts" />
+        <datalist id="opts">
+          <option value="Male"></option>
+          <option value="Female"></option>
+          <option value="Transgender"></option>
+        </datalist>
+        <input type="email" autocomplete="disabled" placeholder="Enter email" />
+        <input type="text" placeholder="Enter pfofile pic URL" />
+        <input type="submit" value="Submit" />
+      </form>
+      <div id="cards-container">
+        <!-- first -->
+        <div class="card">
+          <div class="top">
+            <div class="ring">
+              <div class="gap">
+                <img src="https://whitedotpublishers.com/wp-content/uploads/2022/05/male-placeholder-image.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <p>Age : <span class="age">25</span></p>
+            <p>Gender : <span class="gender">Male</span></p>
+            <h1 class="name">Suresh kumar</h1>
+            <a href="mailto:xyz@gmail.com" class="email">xyz@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

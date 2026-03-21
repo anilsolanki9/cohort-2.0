@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: gray;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transform: translateY(0);
+  transition: transform ease 0.3s;
+}
+
+nav div {
+  display: flex;
+  gap: 10px;
+} */
+
+main {
+  background-color: whitesmoke;
+  min-height: 100vh;
+}
+
+#parent1 {
+  height: 420vh;
+  background-color: rgb(209, 209, 209);
+  font-size: 2rem;
+}
+
+.child {
+  width: 400px;
+  height: 500px;
+  border-radius: 15px;
+  position: sticky;
+
+  left: 50%;
+  transform: translateX(-50%);
+  margin-block: 30px;
+}
+
+#child1 {
+  background-color: rgb(137, 101, 152);
+  top: 10%;
+}
+#child2 {
+  background-color: rgb(107, 152, 101);
+  top: 15%;
+}
+#child3 {
+  background-color: rgb(143, 152, 101);
+  top: 20%;
+}
+#child4 {
+  background-color: rgb(152, 121, 101);
+  top: 25%;
+}
+
+#parent2 {
+  height: 400vh;
+  background-color: gray;
+}
