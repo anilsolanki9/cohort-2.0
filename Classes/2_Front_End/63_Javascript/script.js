@@ -37,7 +37,48 @@
 
 /* -------------------------------------------------------------------------- */
 
-let usersEmails = ['hello@female.com', 'hyy@hemale.com', 'fuck@gmail.com'];
+// let usersEmails = ['hello@female.com', 'hyy@hemale.com', 'female@gmail.com'];
+
+// function sendEmail(email) {
+//   return new Promise((resolve, reject) => {
+//     let time = Math.floor(Math.random() * 5);
+//     setTimeout(() => {
+//       let probability = Math.floor(Math.random() * 10);
+//       if (probability >= 5) {
+//         resolve('Email send successfully.');
+//       } else {
+//         reject('Email not sent...');
+//       }
+//     }, time * 1000);
+//   });
+// }
+
+// async function sendEmails(userEmailsList) {
+//   let allResults = userEmailsList.map(function (email) {
+//     return sendEmail(email)
+//       .then(function (data) {
+//         return data;
+//       })
+//       .catch(function (err) {
+//         return err;
+//       });
+//   });
+
+//   //to print all status array
+//   let allStatus = await Promise.all(allResults);
+//   console.log(allStatus);
+
+//   //to print all statuss
+//   allStatus.forEach(status => {
+//     console.log(status);
+//   });
+// }
+
+// sendEmails(usersEmails);
+
+/* ---------------Alternative------------------- */
+
+let usersEmails = ["hello@female.com", "hyy@hemale.com", "female@gmail.com"];
 
 function sendEmail(email) {
   return new Promise((resolve, reject) => {
@@ -45,33 +86,26 @@ function sendEmail(email) {
     setTimeout(() => {
       let probability = Math.floor(Math.random() * 10);
       if (probability >= 5) {
-        resolve('Email send successfully.');
+        resolve("Email send successfully.");
       } else {
-        reject('Email not sent...');
+        reject("Email not sent...");
       }
     }, time * 1000);
   });
 }
 
 async function sendEmails(userEmailsList) {
-  let allResults = userEmailsList.map(function (email) {
-    return sendEmail(email)
-      .then(function (data) {
-        return data;
+  let results = [];
+  for (email of usersEmails) {
+    await sendEmail(email)
+      .then((data) => {
+        results.push(data);
       })
-      .catch(function (err) {
-        return err;
+      .catch((err) => {
+        results.push(err);
       });
-  });
-
-  //to print all status array
-  let allStatus = await Promise.all(allResults);
-  console.log(allStatus);
-
-  //to print all statuss
-  allStatus.forEach(status => {
-    console.log(status);
-  });
+  }
+  console.log(results);
 }
 
 sendEmails(usersEmails);
