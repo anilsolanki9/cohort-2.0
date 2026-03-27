@@ -1,38 +1,37 @@
 function openFeatures() {
-  let allElems = document.querySelectorAll('.elem');
-  let allFullElemsPages = document.querySelectorAll('.fullElem');
-  let allFullElemPagesBackBtn = document.querySelectorAll('.fullElem .back');
+  let allElems = document.querySelectorAll(".elem");
+  let allFullElemsPages = document.querySelectorAll(".fullElem");
+  let allFullElemPagesBackBtn = document.querySelectorAll(".fullElem .back");
 
   allElems.forEach(function (elem) {
-    //elem pe event listner lagaya
-    elem.addEventListener('click', function () {
-      // console.log(elem.id);
-      //fullElem pages ko target kiya, and us array me se elem.id index vale element ko target kr diya
-      // console.log(allFullElems[elem.id]);
-      allFullElemsPages[elem.id].style.display = 'block';
+    elem.addEventListener("click", function () {
+      allFullElemsPages[elem.id].style.display = "block";
     });
   });
 
   allFullElemPagesBackBtn.forEach(function (backBtn) {
-    backBtn.addEventListener('click', function () {
-      allFullElemsPages[backBtn.id].style.display = 'none';
+    backBtn.addEventListener("click", function () {
+      allFullElemsPages[backBtn.id].style.display = "none";
     });
   });
 }
+
 openFeatures();
 
 function todoList() {
   let currentTasks = [];
 
-  if (localStorage.getItem('currentTasks')) {
-    currentTasks = JSON.parse(localStorage.getItem('currentTasks'));
+  if (localStorage.getItem("currentTasks")) {
+    currentTasks = JSON.parse(localStorage.getItem("currentTasks"));
   } else {
-    console.log('Current task is empty');
+    console.log("Current tasks List is empty");
   }
 
+  renderTask();
+
   function renderTask() {
-    let allTasksContainer = document.querySelector('.allTask');
-    let sum = '';
+    let allTasksContainer = document.querySelector(".allTask");
+    let sum = "";
 
     currentTasks.forEach(function (elem, idx) {
       sum += `<div class="task">
@@ -41,32 +40,31 @@ function todoList() {
             </div>`;
     });
     allTasksContainer.innerHTML = sum;
-    localStorage.setItem('currentTasks', JSON.stringify(currentTasks));
+    localStorage.setItem("currentTasks", JSON.stringify(currentTasks));
 
-    let allMarkAsCompleteBtn = document.querySelectorAll('.allTask .task button');
+    let allMarkAsCompleteBtn = document.querySelectorAll(".allTask .task button");
     allMarkAsCompleteBtn.forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener("click", function () {
         currentTasks.splice(btn.id, 1);
         renderTask();
       });
     });
   }
-  renderTask();
 
-  let form = document.querySelector('.todo-container .addTask form');
-  let taskInput = document.querySelector('.todo-container .addTask form #task-input');
-  let taskDetailsInput = document.querySelector('.todo-container .addTask form textarea');
-  let taskCheckbox = document.querySelector('.todo-container .addTask form #check');
+  let form = document.querySelector(".todo-container .addTask form");
+  let taskInput = document.querySelector(".todo-container .addTask form #task-input");
+  let taskDetailsInput = document.querySelector(".todo-container .addTask form textarea");
+  let taskCheckbox = document.querySelector(".todo-container .addTask form #check");
 
-  form.addEventListener('submit', function (ev) {
+  form.addEventListener("submit", function (ev) {
     ev.preventDefault();
     currentTasks.push({
       task: taskInput.value,
       details: taskDetailsInput.value,
       imp: taskCheckbox.checked,
     });
-    taskInput.value = '';
-    taskDetailsInput.value = '';
+    taskInput.value = "";
+    taskDetailsInput.value = "";
     taskCheckbox.checked = false;
     renderTask();
   });
@@ -75,25 +73,25 @@ function todoList() {
 todoList();
 
 function dailyPlanner() {
-  let dailyPlanner = document.querySelector('.day-planner');
-  let dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {};
+  let dailyPlanner = document.querySelector(".day-planner");
+  let dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
   let hours = Array.from({ length: 18 }, (_, idx) => `${6 + idx}:00 - ${7 + idx}:00`);
 
-  let sum = '';
+  let sum = "";
   hours.forEach((elem, idx) => {
-    let savedData = dayPlanData[idx] || '';
+    let savedData = dayPlanData[idx] || "";
     sum += `<div class="day-planner-time">
             <p>${elem}</p>
-            <input id='${idx}' type="text" placeholder="..." value='${savedData}' />
+            <input id='${idx}' type="text" placeholder=". . ." value='${savedData}' />
           </div>`;
   });
   dailyPlanner.innerHTML = sum;
 
-  let dayPlannerInput = document.querySelectorAll('.day-planner input');
-  dayPlannerInput.forEach(elem => {
-    elem.addEventListener('input', function () {
+  let dayPlannerInput = document.querySelectorAll(".day-planner input");
+  dayPlannerInput.forEach((elem) => {
+    elem.addEventListener("input", function () {
       dayPlanData[elem.id] = elem.value;
-      localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData));
+      localStorage.setItem("dayPlanData", JSON.stringify(dayPlanData));
     });
   });
 }
@@ -101,8 +99,8 @@ function dailyPlanner() {
 dailyPlanner();
 
 function motivationQuote() {
-  let motivationQuoteContent = document.querySelector('.motivation-2 h1');
-  let motivationAuthor = document.querySelector('.motivation-3 h2');
+  let motivationQuoteContent = document.querySelector(".motivation-2 h1");
+  let motivationAuthor = document.querySelector(".motivation-3 h2");
 
   async function fetchQuote() {
     let response = await fetch(`https://motivational-spark-api.vercel.app/api/quotes/random`);
@@ -117,11 +115,11 @@ function motivationQuote() {
 motivationQuote();
 
 function pomodoroTimer() {
-  let timer = document.querySelector('.pomo-timer h1');
-  let startBtn = document.querySelector('.pomo-timer .pomo-btn .start-timer');
-  let pauseBtn = document.querySelector('.pomo-timer .pomo-btn .pause-timer');
-  let resetBtn = document.querySelector('.pomo-timer .pomo-btn .reset-timer');
-  let sessionText = document.querySelector('.pomo-timer .session');
+  let timer = document.querySelector(".pomo-timer h1");
+  let startBtn = document.querySelector(".pomo-timer .pomo-btn .start-timer");
+  let pauseBtn = document.querySelector(".pomo-timer .pomo-btn .pause-timer");
+  let resetBtn = document.querySelector(".pomo-timer .pomo-btn .reset-timer");
+  let sessionText = document.querySelector(".pomo-timer .session");
 
   let timerInterval = null;
   let totalSeconds = 25 * 60;
@@ -130,7 +128,7 @@ function pomodoroTimer() {
   function updateTimer() {
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = totalSeconds % 60;
-    timer.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    timer.innerHTML = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   }
 
   function startTimer() {
@@ -144,7 +142,7 @@ function pomodoroTimer() {
           workSession = false;
           clearInterval(timerInterval);
           totalSeconds = 5 * 60;
-          timer.innerHTML = '05:00';
+          timer.innerHTML = "05:00";
           sessionText.innerHTML = `Break Time`;
           sessionText.style.backgroundColor = `var(--blue)`;
         }
@@ -158,7 +156,7 @@ function pomodoroTimer() {
           workSession = true;
           clearInterval(timerInterval);
           totalSeconds = 25 * 60;
-          timer.innerHTML = '25:00';
+          timer.innerHTML = "25:00";
           sessionText.innerHTML = `Work Session`;
           sessionText.style.backgroundColor = `var(--green)`;
         }
@@ -179,9 +177,9 @@ function pomodoroTimer() {
     updateTimer();
   }
 
-  startBtn.addEventListener('click', startTimer);
-  pauseBtn.addEventListener('click', pauseTimer);
-  resetBtn.addEventListener('click', resetTimer);
+  startBtn.addEventListener("click", startTimer);
+  pauseBtn.addEventListener("click", pauseTimer);
+  resetBtn.addEventListener("click", resetTimer);
 }
 
 pomodoroTimer();
@@ -189,16 +187,16 @@ pomodoroTimer();
 function dailyGoals() {
   let currentGoals = [];
 
-  if (localStorage.getItem('currentGoals')) {
-    currentGoals = JSON.parse(localStorage.getItem('currentGoals'));
+  if (localStorage.getItem("currentGoals")) {
+    currentGoals = JSON.parse(localStorage.getItem("currentGoals"));
   } else {
-    console.log('Current goals list is empty');
+    console.log("Current goals list is empty");
   }
 
   function renderGoals() {
-    let allGoalsContainer = document.querySelector('.allGoals');
+    let allGoalsContainer = document.querySelector(".allGoals");
 
-    let sum = '';
+    let sum = "";
 
     currentGoals.forEach(function (elem, idx) {
       sum += `<div class="goal">
@@ -210,12 +208,12 @@ function dailyGoals() {
     });
 
     allGoalsContainer.innerHTML = sum;
-    localStorage.setItem('currentGoals', JSON.stringify(currentGoals));
+    localStorage.setItem("currentGoals", JSON.stringify(currentGoals));
 
-    let allMarkAsCompleteBtn = document.querySelectorAll('.allGoals .goal button');
+    let allMarkAsCompleteBtn = document.querySelectorAll(".allGoals .goal button");
 
     allMarkAsCompleteBtn.forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener("click", function () {
         currentGoals.splice(btn.id, 1);
         renderGoals();
       });
@@ -224,20 +222,20 @@ function dailyGoals() {
 
   renderGoals();
 
-  let form = document.querySelector('.daily-goals-container .addGoal form');
+  let form = document.querySelector(".daily-goals-container .addGoal form");
 
-  let goalDetailsInput = document.querySelector('.daily-goals-container .addGoal form textarea');
+  let goalDetailsInput = document.querySelector(".daily-goals-container .addGoal form textarea");
 
-  let goalCheckbox = document.querySelector('.daily-goals-container .addGoal form #tick');
+  let goalCheckbox = document.querySelector(".daily-goals-container .addGoal form #tick");
 
-  form.addEventListener('submit', function (ev) {
+  form.addEventListener("submit", function (ev) {
     ev.preventDefault();
     currentGoals.push({
       details: goalDetailsInput.value,
       imp: goalCheckbox.checked,
     });
 
-    goalDetailsInput.value = '';
+    goalDetailsInput.value = "";
     goalCheckbox.checked = false;
     renderGoals();
   });
@@ -248,27 +246,27 @@ dailyGoals();
 function weatherFunctionality() {
   const APIkey = `2be78eea8cc34d8f91540933252412`;
 
-  let city = 'Jodhpur';
-  if (localStorage.getItem('city')) {
-    city = localStorage.getItem('city');
+  let city = "Jodhpur";
+  if (localStorage.getItem("city")) {
+    city = localStorage.getItem("city");
   } else {
-    city = 'Jodhpur';
-    localStorage.setItem('city', city);
+    city = "Jodhpur";
+    localStorage.setItem("city", city);
   }
 
-  let header = document.querySelector('.allElems header');
-  let date = document.querySelector('header .header1 .date');
-  let dayTime = document.querySelector('header .header1 .day-time');
-  let currentLocation = document.querySelector('header .header1 .current-location');
-  let temprature = document.querySelector('header .header2 .temp');
-  let condition = document.querySelector('header .header2 .condition');
-  let precipitation = document.querySelector('header .header2 .precipitation');
-  let humidity = document.querySelector('header .header2 .humidity');
-  let wind = document.querySelector('header .header2 .wind');
+  let header = document.querySelector(".allElems header");
+  let date = document.querySelector("header .header1 .date");
+  let dayTime = document.querySelector("header .header1 .day-time");
+  let currentLocation = document.querySelector("header .header1 .current-location");
+  let temprature = document.querySelector("header .header2 .temp");
+  let condition = document.querySelector("header .header2 .condition");
+  let precipitation = document.querySelector("header .header2 .precipitation");
+  let humidity = document.querySelector("header .header2 .humidity");
+  let wind = document.querySelector("header .header2 .wind");
 
-  currentLocation.addEventListener('click', function () {
-    city = prompt('Enter Your City');
-    localStorage.setItem('city', city);
+  currentLocation.addEventListener("click", function () {
+    city = prompt("Enter Your City");
+    localStorage.setItem("city", city);
     weatherFunctionality();
   });
 
@@ -293,22 +291,9 @@ function weatherFunctionality() {
   function getDate() {
     let data = new Date();
 
-    const allMonths = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
+    const allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    let allDaysName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let allDaysName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let hours = data.getHours();
 
@@ -318,7 +303,7 @@ function weatherFunctionality() {
     header.style.backgroundSize = `cover`;
     header.style.backgroundPosition = `center`;
 
-    let ampm = hours >= 12 ? 'PM' : 'AM';
+    let ampm = hours >= 12 ? "PM" : "AM";
     if (hours >= 12) hours -= 12;
 
     let minutes = data.getMinutes();
@@ -330,9 +315,7 @@ function weatherFunctionality() {
     let year = data.getFullYear();
 
     date.innerHTML = `${tarik} ${month}, ${year}`;
-    dayTime.innerHTML = `${weekDay}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(
-      seconds
-    ).padStart('2', '0')} ${ampm}`;
+    dayTime.innerHTML = `${weekDay}, ${String(hours).padStart("2", "0")}:${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")} ${ampm}`;
   }
 
   setInterval(function () {
@@ -345,41 +328,41 @@ function weatherFunctionality() {
 weatherFunctionality();
 
 function themeChange() {
-  let themeBtn = document.querySelector('.nav-inner .theme');
+  let themeBtn = document.querySelector(".nav-inner .theme");
   let rootElement = document.documentElement;
   let flag = 0;
 
   let currentTheme = [];
 
-  if (localStorage.getItem('currentTheme')) {
-    currentTheme = JSON.parse(localStorage.getItem('currentTheme'));
-    rootElement.style.setProperty('--pri', currentTheme[0]);
-    rootElement.style.setProperty('--sec', currentTheme[1]);
-    rootElement.style.setProperty('--tri1', currentTheme[2]);
-    rootElement.style.setProperty('--tri2', currentTheme[3]);
+  if (localStorage.getItem("currentTheme")) {
+    currentTheme = JSON.parse(localStorage.getItem("currentTheme"));
+    rootElement.style.setProperty("--pri", currentTheme[0]);
+    rootElement.style.setProperty("--sec", currentTheme[1]);
+    rootElement.style.setProperty("--tri1", currentTheme[2]);
+    rootElement.style.setProperty("--tri2", currentTheme[3]);
     flag = currentTheme[4];
   } else {
-    currentTheme = ['#f8f4e1', '#381c0a', '#feba17', '#74512d', 0];
-    rootElement.style.setProperty('--pri', currentTheme[0]);
-    rootElement.style.setProperty('--sec', currentTheme[1]);
-    rootElement.style.setProperty('--tri1', currentTheme[2]);
-    rootElement.style.setProperty('--tri2', currentTheme[3]);
+    currentTheme = ["#f8f4e1", "#381c0a", "#feba17", "#74512d", 0];
+    rootElement.style.setProperty("--pri", currentTheme[0]);
+    rootElement.style.setProperty("--sec", currentTheme[1]);
+    rootElement.style.setProperty("--tri1", currentTheme[2]);
+    rootElement.style.setProperty("--tri2", currentTheme[3]);
     flag = currentTheme[4];
   }
 
-  themeBtn.addEventListener('click', function () {
+  themeBtn.addEventListener("click", function () {
     let themes = [
-      ['#f8f4e1', '#381c0a', '#feba17', '#74512d'],
-      ['#F6F0D7', '#89986D', '#C5D89D', '#9CAB84'],
-      ['#F4EEFF', '#424874', '#DCD6F7', '#A6B1E1'],
-      ['#FCF9EA', '#A8BBA3', '#FFA239', '#97A87A'],
-      ['#F7EFE5', '#674188', '#E4C988', '#C3ACD0'],
-      ['#EEF5FF', '#176B87', '#64CCC5', '#B4D4FF'],
-      ['#FFF4F4', '#BE3144', '#F05941', '#872341'],
-      ['#F1F6F9', '#394867', '#9BA4B5', '#212A3E'],
-      ['#FAF3E0', '#4A4A48', '#B68973', '#8D7B68'],
-      ['#F5F5F5', '#222831', '#00ADB5', '#393E46'],
-      ['#FFF8F0', '#3A4F7A', '#E36414', '#6B728E'],
+      ["#f8f4e1", "#381c0a", "#feba17", "#74512d"],
+      ["#F6F0D7", "#89986D", "#C5D89D", "#9CAB84"],
+      ["#F4EEFF", "#424874", "#DCD6F7", "#A6B1E1"],
+      ["#FCF9EA", "#A8BBA3", "#FFA239", "#97A87A"],
+      ["#F7EFE5", "#674188", "#E4C988", "#C3ACD0"],
+      ["#EEF5FF", "#176B87", "#64CCC5", "#B4D4FF"],
+      ["#FFF4F4", "#BE3144", "#F05941", "#872341"],
+      ["#F1F6F9", "#394867", "#9BA4B5", "#212A3E"],
+      ["#FAF3E0", "#4A4A48", "#B68973", "#8D7B68"],
+      ["#F5F5F5", "#222831", "#00ADB5", "#393E46"],
+      ["#FFF8F0", "#3A4F7A", "#E36414", "#6B728E"],
     ];
 
     function themeRender() {
@@ -391,14 +374,14 @@ function themeChange() {
       currentTheme[3] = themes[flag][3];
       currentTheme[4] = flag; // saving flag inside array, to use later
 
-      rootElement.style.setProperty('--pri', currentTheme[0]);
-      rootElement.style.setProperty('--sec', currentTheme[1]);
-      rootElement.style.setProperty('--tri1', currentTheme[2]);
-      rootElement.style.setProperty('--tri2', currentTheme[3]);
+      rootElement.style.setProperty("--pri", currentTheme[0]);
+      rootElement.style.setProperty("--sec", currentTheme[1]);
+      rootElement.style.setProperty("--tri1", currentTheme[2]);
+      rootElement.style.setProperty("--tri2", currentTheme[3]);
     }
 
     themeRender();
-    localStorage.setItem('currentTheme', JSON.stringify(currentTheme));
+    localStorage.setItem("currentTheme", JSON.stringify(currentTheme));
   });
 }
 

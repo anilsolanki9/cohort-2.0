@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #333;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.559), rgba(45, 45, 45, 0.515)), url(./assets/wal1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.static {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  padding: 50px 40px 30px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+
+  .anchor {
+    background-color: #6c37ed;
+    z-index: 10;
+    pointer-events: none;
+
+    border-radius: 10px;
+
+    position-anchor: --select-anchor;
+
+    mix-blend-mode: color-dodge;
+
+    position: absolute;
+    top: anchor(top);
+    left: anchor(left);
+    right: anchor(right);
+    bottom: anchor(bottom);
+
+    transition: all ease 0.2s;
+  }
+
+  .left,
+  .right {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.feature-box {
+  background-color: rgba(150, 137, 175, 0.348);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(46, 46, 46);
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.474);
+
+  position: relative;
+  cursor: pointer;
+
+  img {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.trio {
+  padding: 0;
+  gap: 0;
+
+  > * {
+    padding: 10px 15px;
+  }
+}
+
+.anchor-btn.selected {
+  anchor-name: --select-anchor;
+}
+
+.taskList {
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 20px;
+
+  min-width: 35vw;
+
+  background-color: #0d0b0ecb;
+  border: 1px solid gray;
+
+  position: absolute;
+  bottom: 150%;
+  left: 0px;
+  backdrop-filter: blur(10px);
+
+  display: none;
+
+  header {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.455);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      padding: 10px;
+      box-sizing: content-box;
+      border-radius: 10px;
+      background-color: rgba(135, 135, 135, 0.564);
+    }
+  }
+
+  .allTasks {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 30vh;
+    max-height: 50vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.582) transparent;
+
+    border-bottom: 1px solid gray;
+
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      padding: 10px 15px;
+      background-color: rgba(128, 128, 128, 0.575);
+      border-radius: 10px;
+
+      &:hover {
+        background-color: rgba(185, 185, 185, 0.575);
+      }
+
+      position: relative;
+
+      input {
+        width: 20px;
+        height: 20px;
+        accent-color: rgb(126, 16, 195);
+        cursor: pointer;
+      }
+
+      input:checked + h3 {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      img {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: rgba(155, 155, 155, 0.65);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        padding: 2px;
+        pointer-events: all;
+        transition: all ease 0.3s;
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(255, 57, 57, 0.658);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
+  .addTask {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      padding: 10px 20px;
+      background-color: rgba(128, 128, 128, 0.63);
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    button {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.751);
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all ease 0.3s;
+      border: none;
+      outline: none;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
