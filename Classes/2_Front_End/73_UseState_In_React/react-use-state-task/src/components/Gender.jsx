@@ -14,7 +14,7 @@ const Gender = props => {
   return (
     <div
       style={{ background: color }}
-      className="h-75 w-125 flex justify-center items-center font-bold text-white text-4xl  my-8 rounded-3xl"
+      className="h-75 w-125 flex justify-center items-center font-bold text-4xl  my-8 rounded-3xl animate-AN"
     >
       {props.gender == 'male' ? 'Men' : 'Women'}'s Washroom
     </div>

@@ -48,20 +48,20 @@ Here:
 ```jsx
 import { useState }from"react";
 
-functionCounter() {
+function Counter() {
 const [count, setCount] =useState(0);
 
 return (
 <div>
 <h2>Count: {count}</h2>
-<buttononClick={() => setCount(count + 1)}>
+<button onClick={() => setCount(count + 1)}>
         Increment
 </button>
 </div>
   );
 }
 
-exportdefaultCounter;
+export default Counter;
 
 ```
 
