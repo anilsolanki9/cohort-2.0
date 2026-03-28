@@ -1,0 +1,35 @@
+1. npm init -y
+2. in package.json, add
+
+"bin": {
+  "tw": "./index.js"
+}
+
+3. create index.js file
+add this code in init
+
+#!/usr/bin/env node
+
+const { execSync } = require("child_process");
+const fs = require("fs");
+
+console.log("Installing Tailwind...");
+
+execSync("npm install tailwindcss @tailwindcss/vite", { stdio: "inherit" });
+
+// CSS file
+fs.writeFileSync("src/index.css", '@import "tailwindcss";');
+
+console.log("Done ✅");
+
+---
+
+4. make thejs executable
+
+chmod +x index.js
+
+5. make a global command
+
+npm link
+
+6. now can use using - tw
