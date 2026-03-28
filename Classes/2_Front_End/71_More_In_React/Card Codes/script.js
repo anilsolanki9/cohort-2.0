@@ -1,4 +1,4 @@
-let Allstrips = document.querySelectorAll('.banner-container .exp .exp-grid .strip');
+let Allstrips = document.querySelectorAll(".banner-container .exp .exp-grid .strip");
 
 // 270 hue = violate
 // 0 = red

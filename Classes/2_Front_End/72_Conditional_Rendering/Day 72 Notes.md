@@ -122,12 +122,12 @@ React uses **Synthetic Events**, which work the same across all browsers.
 ### Example:
 
 ```jsx
-functionApp() {
-functionhandleClick() {
+function App() {
+function handleClick() {
 console.log("clicked");
   }
 
-return<buttononClick={handleClick}>Click Me</button>;
+return <buttononClick={handleClick}>Click Me</button>;
 }
 
 ```
@@ -139,8 +139,8 @@ return<buttononClick={handleClick}>Click Me</button>;
 ### Example:
 
 ```jsx
-functionApp() {
-functionhandleSubmit(e) {
+function App() {
+function handleSubmit(e) {
     e.preventDefault();
 console.log("submitted");
   }
