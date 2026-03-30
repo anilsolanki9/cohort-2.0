@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #111;
+  --text-primary: #f4f4f4;
+
+  --bg-btn: #222;
+  --bg-card: #444;
+  --bg-delete-btn: #fa5e5e;
+
+  /* Paddin Variables */
+  --nav-padding: 1rem 2rem;
+  --section-padding: 1rem 2rem;
+  --padding-sm: 5px;
+  --padding-md: 10px;
+  --padding-lg: 15px;
+  --padding-xl: 20px;
+  --padding-2xl: 30px;
+
+  /* Border Radius */
+  --border-sm: 5px;
+  --border-md: 10px;
+  --border-lg: 15px;
+  --border-xl: 20px;
+  --border-2xl: 30px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  padding: var(--nav-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .right button {
+  background-color: var(--bg-btn);
+  color: var(--text-primary);
+  border: none;
+  outline: none;
+  padding: var(--padding-md) var(--padding-lg);
+
+  cursor: pointer;
+  border-radius: var(--border-md);
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+section#board {
+  flex: 1; /* to make it grow */
+  height: 100%;
+  padding: var(--section-padding);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--padding-2xl);
+}
+
+.task-column {
+  flex: 1;
+  background-color: var(--bg-btn);
+  padding: var(--padding-md) var(--padding-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-md);
+  border-radius: var(--border-md);
+  transition: all 0.3s ease;
+}
+
+section .task-column.hover-over {
+  border: 1px solid var(--text-primary);
+  scale: 1.03;
+}
+
+.task-column .heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-column .task {
+  background-color: var(--bg-card);
+  padding: var(--padding-md);
+  border-radius: var(--border-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-sm);
+  cursor: grab;
+}
+
+.task-column .task button {
+  align-self: flex-end;
+  cursor: pointer;
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--border-sm);
+  border: none;
+  outline: none;
+  font-weight: bold;
+  background-color: var(--bg-delete-btn);
+  color: var(--text-primary);
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: 1.5px;
+}
+
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  display: none;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal .bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.473);
+  backdrop-filter: blur(5px);
+}
+
+.modal .center {
+  background-color: var(--bg-btn);
+  padding: var(--padding-2xl);
+  border-radius: var(--border-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-lg);
+  z-index: 10;
+}
+
+.center input,
+.center textarea {
+  font-size: 1.6rem;
+  background-color: var(--bg-card);
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  padding: var(--padding-lg);
+  border-radius: var(--border-md);
+  resize: none;
+}
+
+.center textarea {
+  height: 150px;
+}
+
+.center button {
+  background-color: var(--bg-card);
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  padding: var(--padding-md) var(--padding-lg);
+  cursor: pointer;
+  border-radius: var(--border-md);
+  width: fit-content;
+  margin: 0 auto;
+}
