@@ -10,6 +10,7 @@ import Cources from "./pages/Cources";
 import AnyCourse from "./pages/AnyCourse";
 import CourseDetails from "./pages/CourseDetails";
 import NotFoundPage from "./pages/NotFoundPage";
+import BackBtn from "./components/BackBtn";
 
 const App = () => {
   return (
@@ -37,6 +38,8 @@ const App = () => {
         {/* Universal Route */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+
+      <BackBtn />
     </div>
   );
 };
