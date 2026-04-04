@@ -23,14 +23,14 @@ npm install react-router-dom
 
 ## 3. Core Components Used in Routing
 
-| Component | Purpose |
-| --- | --- |
-| `BrowserRouter` | Wraps the app and enables routing |
-| `Routes` | Container for all routes |
-| `Route` | Defines a path and its component |
-| `Link` | Used for navigation (no page reload) |
-| `useParams` | Reads dynamic values from URL |
-| `Outlet` | Used in nested routing |
+| Component       | Purpose                              |
+| --------------- | ------------------------------------ |
+| `BrowserRouter` | Wraps the app and enables routing    |
+| `Routes`        | Container for all routes             |
+| `Route`         | Defines a path and its component     |
+| `Link`          | Used for navigation (no page reload) |
+| `useParams`     | Reads dynamic values from URL        |
+| `Outlet`        | Used in nested routing               |
 
 ---
 
@@ -89,8 +89,8 @@ exportdefaultApp;
 
 - `Routes` → wrapper for all routes
 - `Route`:
-    - `path` → URL
-    - `element` → component to render
+  - `path` → URL
+  - `element` → component to render
 
 ---
 
@@ -141,7 +141,6 @@ Here, `101` is dynamic.
 
 ```jsx
 <Route path="/user/:id" element={<User />} />
-
 ```
 
 `:id` → dynamic parameter
@@ -151,20 +150,19 @@ Here, `101` is dynamic.
 ### User.jsx
 
 ```jsx
-import { useParams }from"react-router-dom";
+import { useParams } from "react-router-dom";
 
 constUser = () => {
-const params =useParams();
+  const params = useParams();
 
-return (
-<div>
-<h2>User ID: {params.id}</h2>
-</div>
+  return (
+    <div>
+      <h2>User ID: {params.id}</h2>
+    </div>
   );
 };
 
 exportdefaultUser;
-
 ```
 
 ### Explanation
@@ -181,26 +179,24 @@ exportdefaultUser;
 
 ```jsx
 <Route path="/product/:category/:id" element={<Product />} />
-
 ```
 
 ### Component
 
 ```jsx
-import { useParams }from"react-router-dom";
+import { useParams } from "react-router-dom";
 
 constProduct = () => {
-const { category, id } =useParams();
+  const { category, id } = useParams();
 
-return (
-<h2>
+  return (
+    <h2>
       Category: {category} | Product ID: {id}
-</h2>
+    </h2>
   );
 };
 
 exportdefaultProduct;
-
 ```
 
 ---
@@ -238,10 +234,10 @@ importSettingsfrom"./Settings";
 constApp = () => {
 return (
 <Routes>
-<Routepath="/dashboard"element={<Dashboard />}>
-<Routepath="profile"element={<Profile />} />
-<Routepath="settings"element={<Settings />} />
-</Route>
+  <Route path="/dashboard" element={<Dashboard />}>
+    <Route path="profile" element={<Profile />} />
+    <Route path="settings" element={<Settings />} />
+  </Route>
 </Routes>
   );
 };
@@ -257,23 +253,22 @@ exportdefaultApp;
 ### Dashboard.jsx
 
 ```jsx
-import {Outlet,Link }from"react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 constDashboard = () => {
-return (
-<div>
-<h2>Dashboard</h2>
+  return (
+    <div>
+      <h2>Dashboard</h2>
 
-<Linkto="profile">Profile</Link>
-<Linkto="settings">Settings</Link>
+      <Link to="profile">Profile</Link>
+      <Link to="settings">Settings</Link>
 
-<Outlet />
-</div>
+      <Outlet />
+    </div>
   );
 };
 
 exportdefaultDashboard;
-
 ```
 
 ### Explanation
@@ -313,11 +308,11 @@ importNotFoundfrom"./NotFound";
 constApp = () => {
 return (
 <Routes>
-<Routepath="/"element={<Home />} />
-<Routepath="/about"element={<About />} />
+<Route path="/" element={<Home />} />
+<Route   path="/about" element={<About />} />
 
       {/* Universal Route */}
-<Routepath="*"element={<NotFound />} />
+<Route path="*" element={<NotFound />} />
 </Routes>
   );
 };
@@ -333,19 +328,18 @@ exportdefaultApp;
 ### NotFound.jsx
 
 ```jsx
-import {Link }from"react-router-dom";
+import { Link } from "react-router-dom";
 
 constNotFound = () => {
-return (
-<div>
-<h1>404 - Page Not Found</h1>
-<p>The page you are looking for does not exist.</p>
+  return (
+    <div>
+      <h1>404 - Page Not Found</h1>
+      <p>The page you are looking for does not exist.</p>
 
-<Linkto="/">Go Back to Home</Link>
-</div>
+      <Link to="/">Go Back to Home</Link>
+    </div>
   );
 };
 
 exportdefaultNotFound;
-
 ```
