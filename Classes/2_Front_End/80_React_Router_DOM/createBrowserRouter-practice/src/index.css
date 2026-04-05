@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+.navlink {
+  transition: all ease 0.2s;
+  position: relative;
+}
+
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 4px;
+  background-color: rgb(28, 119, 255);
+  width: 0;
+  transition: all 0.2s linear;
+}
+
+.active {
+  color: rgb(28, 119, 255);
+}
+
+.active::after {
+  width: 100%;
+}
+
+.pending {
+  color: black;
+}
