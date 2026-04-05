@@ -5,12 +5,12 @@
 **Why:** Redirect after login, submit, logout, or any condition.
 
 ```jsx
-import { useNavigate }from"react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 functionLogin() {
-const navigate =useNavigate();
+const navigate = useNavigate();
 
-functionhandleLogin() {
+function handleLogin() {
 // login logic
 navigate("/dashboard");// redirect
   }
@@ -35,13 +35,13 @@ return<buttononClick={handleLogin}>Login</button>;
 **Why:** Needed when using **nested routing**.
 
 ```jsx
-import {Outlet }from"react-router-dom";
+import {Outlet } from"react-router-dom";
 
 functionLayout() {
 return (
 <>
-<h1>Navbar</h1>
-<Outlet />
+  <h1>Navbar</h1>
+  <Outlet />
 </>
   );
 }
@@ -88,7 +88,7 @@ children: [
 ]);
 
 functionApp() {
-return<RouterProviderrouter={router} />;
+return <RouterProvider router={router} />;
 }
 
 ```
