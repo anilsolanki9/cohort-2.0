@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cursor-1 {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  transition: all  0.1s linear;
+}
+
+.cursor-2 {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid black;
+  transition: all 0.2s linear;
+}
