@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./src/styles/styles.css"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <!-- Left part -->
+      <div class="left">
+        <!-- Left header -->
+        <header>
+          <h1>Editor <i class="ri-image-edit-line"></i></h1>
+        </header>
+
+        <!-- Layers panel -->
+        <div class="layers-penal">
+          <header>
+            <h3>Layers</h3>
+
+            <div class="btns">
+              <div class="btn move-up"><i class="ri-arrow-up-double-fill"></i></div>
+              <div class="btn move-down"><i class="ri-arrow-down-double-fill"></i></div>
+            </div>
+          </header>
+
+          <div class="layers"></div>
+        </div>
+
+        <!-- Element creation btns -->
+        <div class="feature-btns">
+          <h3>Create</h3>
+
+          <div class="btn add-rect"><i class="ri-rectangle-line"></i></div>
+
+          <div class="btn add-text"><i class="ri-text"></i></div>
+        </div>
+
+        <!-- Canvas save btns -->
+        <div class="save-btns">
+          <div class="save-btn save-json">Save as JSON <i class="ri-file-code-fill"></i></div>
+          <div class="save-btn save-html">Save as HTML <i class="ri-html5-fill"></i></div>
+        </div>
+      </div>
+
+      <!-- Central canvas -->
+      <div class="mid">
+        <div class="canvas"></div>
+      </div>
+
+      <!-- Right properties -->
+      <div class="right">
+        <header>
+          <h2>Properties</h2>
+        </header>
+
+        <div class="form-container">
+          <h2 class="no-elem">No Element Selected</h2>
+
+          <form action="">
+            <div class="input-box">
+              <label for="width">Width</label>
+              <input
+                type="text"
+                name="width"
+                id="width"
+              />
+            </div>
+
+            <div class="input-box">
+              <label for="height">Height</label>
+              <input
+                type="text"
+                name="height"
+                id="height"
+              />
+            </div>
+
+            <div class="input-box color">
+              <label for="bg-color">Bg Color</label>
+              <input
+                type="color"
+                name="bg-color"
+                id="bg-color"
+              />
+
+              <div class="input-box">
+                <label for="textarea-inp">Text Content</label>
+                <textarea
+                  spellcheck="off"
+                  type="text"
+                  name="text"
+                  id="textarea-inp"
+                ></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="./src/scripts/script.js"
+    ></script>
+  </body>
+</html>

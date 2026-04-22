@@ -1,0 +1,155 @@
+%-------------------------
+% Resume in Latex
+% Author: Anil Solanki
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Anil Solanki} \\ \vspace{4pt}
+    \textbf{\Large \scshape Full Stack Developer} \\ \vspace{4pt}
+    \small \faPhone\ +91-8107010369 ~ 
+    \href{https://github.com/anilsolanki9}{\faGithub\ \underline{anilsolanki9}} ~ 
+    \href{mailto:anilsolanki.work1@gmail.com}{\faEnvelope\ \underline{anilsolanki.work1@gmail.com}} ~ 
+    \href{https://www.linkedin.com/in/anil-solanki-150142326/}{\faLinkedin\ \underline{linkedin.com/in/anil-solanki}} 
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+Full Stack Developer with strong hands-on experience in React, Node.js, Express, and MongoDB, gained through multiple real-world projects. Skilled in building responsive user interfaces, integrating APIs, and implementing authentication systems. Currently pursuing BCA (2027) and seeking opportunities to apply and grow full-stack development skills in real-world environments.
+
+%-----------SKILLS-----------
+\section{Skills}
+\textbf{Frontend:} HTML5, CSS3, SCSS, JavaScript (ES6+), React.js, Tailwind CSS  \\
+\textbf{Backend:} Node.js, Express.js, MongoDB, REST APIs, JWT, bcrypt \\
+\textbf{Developer Tools:} Git, GitHub, Postman, Vercel \\
+\textbf{Languages:} C, C++, Java, Python \\
+\textbf{Currently Learning:} TypeScript, Next.js, Framer Motion, GSAP, Three.js, Docker, AWS \\
+
+% %-----------INTERNSHIP-----------
+% \section{Experience}
+% \resumeSubHeadingListStart
+%   \resumeSubheading
+%     {Data Analyst Intern}{April 2025 -- June 2025}
+%     {Dataview Analytics (Remote)}{Tools Used: Excel, SQL, Power BI}
+%     \resumeItemListStart
+%       \resumeItem{\textbf{Processed and standardized a dataset of over 1,00,000 rows} from multiple regions to support weekly analytics—enabled business teams to track KPIs across geography and time.}
+%       \resumeItem{Designed smart Excel templates embedded with lookup functions and pivot logic, \textbf{saving 40\% reporting time across 4 departments.}}
+%       \resumeItem{Developed and maintained Power BI dashboards to visualize revenue trends, customer mix, and monthly performance—regularly used by managers and analysts across business units.}
+%       \resumeItem{Collaborated with 4 analysts and 2 senior managers to define and validate 6 KPIs, improving report reliability and strategic alignment.}
+%     \resumeItemListEnd
+% \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+  {\textbf{Astratto – Design Agency Website} $|$ \emph{HTML, CSS, Tailwind CSS, React.js}}{\href{https://astratto-design-agency.vercel.app/}{\underline{Live Demo}} { -  } \href{https://github.com/anilsolanki9/Astratto-Design-agency}{\underline{Source GitHub}}}
+  \resumeItemListStart
+    \resumeItem{Developed a modern design agency website with a clean, premium user interface using React and Tailwind CSS.}
+    \resumeItem{Implemented a reusable, component-based architecture to reduce code redundancy and improve maintainability.}
+    \resumeItem{Created custom visual assets and images using AI-based image generation to support branding and presentation.}
+    \resumeItem{Ensured full responsiveness across mobile, desktop, and large 4K displays with consistent layout behavior.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Productivity Dashboard} $|$ \emph{HTML, CSS, JavaScript, OpenWeather API}}{\href{https://productivity-dashboard-rho.vercel.app/}{\underline{Live Demo}} { -  } \href{https://github.com/anilsolanki9/Productivity-dashboard}{\underline{Source GitHub}}}
+  \resumeItemListStart
+    \resumeItem{Developed a single-page productivity dashboard with smooth, lag-free interactions and no page reloads.}
+    \resumeItem{Integrated real-time date, time, and location-based weather data using OpenWeather API.}
+    \resumeItem{Implemented five productivity modules including Todo List, Daily Planner, Pomodoro Timer, Daily Goals, and Motivation Quotes.}
+    \resumeItem{Persisted all user data using browser localStorage to maintain state across sessions.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Web-Based Editor} $|$ \emph{HTML, CSS, JavaScript, Tailwind CSS}}{\href{https://anilsolanki9.github.io/web-editor/}{\underline{Live Demo}} { -  } \href{https://github.com/anilsolanki9/web-editor}{\underline{Source GitHub}}}
+  \resumeItemListStart
+    \resumeItem{Built a browser-based visual editor with a canvas-centered workspace inspired by design tools like Figma.}
+    \resumeItem{Implemented multi-page support with independent layer stacks and z-index based element ordering.}
+    \resumeItem{Enabled drag, resize, rotate, and keyboard-based element manipulation with real-time property controls.}
+    \resumeItem{Added export functionality to generate project output as JSON or standalone HTML files.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------AWARDS-----------
+\section{Certifications}
+\resumeItemListStart
+  \resumeItem{\textbf{\href{https://www.coursera.org/account/accomplishments/verify/CPZI8RSGSZQI}{Meta Introduction to Frontend Development – Coursera (5 Sep 2025):}} Completed the Introduction to Frontend Development course by Meta with 100\% Grade. Learnt about day-to-day responsibilities of a web developer \& get understanding of core technologies of web. Got introduces with HTML, CSS, modern UI frameworks like Bootstrap, React.}
+\resumeItemListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Bachelor of Computer Applications (BCA)}{2023 -- 2027}
+    {Manipal University Jaipur}{CGPA: 9 / 10}
+    \resumeSubheading
+  {Senior Secondary (12th) – PCM}{2021 -- 2022}
+  {Government Senior Secondary School, Kalyanpur, Barmer, Rajasthan Board}{Percentage: 82.20\%}
+  \resumeSubheading
+  {Secondary (10th)}{2019 -- 2020}
+  {Bharti Public School, Rajasthan Board}{Percentage: 90.33\%}
+\resumeSubHeadingListEnd
+
+\end{document}

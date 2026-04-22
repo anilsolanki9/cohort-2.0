@@ -1,0 +1,352 @@
+:root {
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 18px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+  --text-2xl: 42px;
+  --text-3xl: 62px;
+  --bg-primary: #0e1015;
+  --bg-surface: #1d222c;
+  --bg-canvas: #29303d;
+  --text-primary: whitesmoke;
+  --accent-primary: rgb(0, 129, 165);
+  --thumb-color: rgba(6, 186, 218, 0.386);
+  --padding-xs: 5px;
+  --padding-sm: 10px;
+  --padding-md: 20px;
+  --padding-lg: 30px;
+  --padding-xl: 40px;
+  --padding-2xl: 50px;
+  --padding-3xl: 60px;
+  --radius-xs: 5px;
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-xl: 40px;
+  --radius-2xl: 50px;
+  --radius-3xl: 60px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  gap: 1.5px;
+  padding: 1.5px;
+  background-color: var(--accent-primary);
+}
+main .left,
+main .right,
+main .mid {
+  background-color: var(--bg-primary);
+  max-height: 100%;
+}
+main .left,
+main .right {
+  width: 250px;
+}
+main .mid {
+  flex-grow: 1;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+.left > header {
+  border-bottom: 2px solid var(--accent-primary);
+  padding: var(--padding-sm) var(--padding-md);
+}
+.left > header h1 {
+  font-size: var(--text-lg);
+}
+.left .layers-penal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent-primary);
+}
+.left .layers-penal header {
+  padding: var(--padding-sm) var(--padding-md);
+  border-bottom: 2px solid var(--accent-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left .layers-penal header .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.left .layers-penal header .btns .btn {
+  height: 25px;
+  width: 30px;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  outline: 0px solid var(--accent-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left .layers-penal header .btns .btn:hover {
+  outline: 2px solid var(--accent-primary);
+}
+.left .layers-penal header .btns .btn:active {
+  scale: 0.95;
+}
+.left .layers-penal .layers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-sm);
+  padding: var(--padding-sm);
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumb-color) transparent;
+}
+.left .layers-penal .layers .layer {
+  padding: var(--padding-sm);
+  background-color: var(--bg-surface);
+  cursor: pointer;
+  border-radius: var(--radius-xs);
+  display: flex;
+  gap: var(--padding-xs);
+}
+.left .layers-penal .layers .layer:hover {
+  outline: 2px solid var(--accent-primary);
+}
+.left .layers-penal .layers .layer.selected {
+  outline: 2px solid var(--accent-primary);
+}
+.left .feature-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--padding-sm);
+  gap: var(--padding-sm);
+  border-bottom: 2px solid var(--accent-primary);
+}
+.left .feature-btns .btn {
+  background-color: var(--bg-surface);
+  padding: var(--padding-xs) var(--padding-sm);
+  cursor: pointer;
+  border-radius: var(--radius-xs);
+}
+.left .feature-btns .btn:hover {
+  outline: 2px solid var(--accent-primary);
+}
+.left .save-btns {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-sm);
+  gap: var(--padding-sm);
+}
+.left .save-btns .save-btn {
+  background-color: var(--bg-surface);
+  padding: var(--padding-xs) var(--padding-sm);
+  cursor: pointer;
+  border-radius: var(--radius-xs);
+}
+.left .save-btns .save-btn:hover {
+  outline: 2px solid var(--accent-primary);
+}
+
+.main .mid {
+  padding: var(--padding-xs);
+}
+.main .mid .canvas {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-canvas);
+  position: relative;
+}
+.main .mid .canvas .rectangle,
+.main .mid .canvas .text {
+  position: absolute;
+  background-color: orangered;
+}
+.main .mid .canvas .rectangle .outline,
+.main .mid .canvas .text .outline {
+  position: absolute;
+  inset: 0;
+  outline: 3px solid rgb(228, 255, 50);
+  display: none;
+}
+.main .mid .canvas .rectangle .outline .bar,
+.main .mid .canvas .text .outline .bar {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: 25px;
+  background-color: rgb(228, 255, 50);
+  transform: translateX(-50%);
+}
+.main .mid .canvas .rectangle .outline .bar .rotate-handle,
+.main .mid .canvas .text .outline .bar .rotate-handle {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(28, 28, 28);
+  border: 2px solid rgb(43, 226, 220);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: grab;
+}
+.main .mid .canvas .rectangle .outline .bar .rotate-handle:active,
+.main .mid .canvas .text .outline .bar .rotate-handle:active {
+  cursor: grabbing;
+}
+.main .mid .canvas .rectangle .handle,
+.main .mid .canvas .text .handle {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(28, 28, 28);
+  border: 2px solid rgb(43, 226, 220);
+  position: absolute;
+  display: none;
+}
+.main .mid .canvas .rectangle .tl,
+.main .mid .canvas .text .tl {
+  top: 0;
+  left: 0;
+  cursor: nw-resize;
+  transform: translate(-50%, -50%);
+}
+.main .mid .canvas .rectangle .tr,
+.main .mid .canvas .text .tr {
+  top: 0;
+  right: 0;
+  cursor: ne-resize;
+  transform: translate(50%, -50%);
+}
+.main .mid .canvas .rectangle .bl,
+.main .mid .canvas .text .bl {
+  bottom: 0;
+  left: 0;
+  cursor: sw-resize;
+  transform: translate(-50%, 50%);
+}
+.main .mid .canvas .rectangle .br,
+.main .mid .canvas .text .br {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+  transform: translate(50%, 50%);
+}
+.main .mid .canvas .rectangle.selected .outline,
+.main .mid .canvas .rectangle.selected .handle,
+.main .mid .canvas .text.selected .outline,
+.main .mid .canvas .text.selected .handle {
+  display: block;
+}
+.main .mid .canvas .text {
+  position: absolute;
+  padding: var(--padding-xs) var(--padding-sm);
+  background-color: rgb(41, 174, 161);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+.main .right header {
+  border-bottom: 2px solid var(--accent-primary);
+  padding: var(--padding-sm) var(--padding-md);
+}
+.main .right .form-container h2.no-elem {
+  padding: var(--padding-lg) var(--padding-sm);
+  font-size: var(--text-sm);
+  text-align: center;
+  opacity: 0.7;
+  font-weight: 400;
+  display: block;
+}
+.main .right .form-container form {
+  border-bottom: 2px solid var(--accent-primary);
+  padding: var(--padding-sm) var(--padding-md);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .right .form-container form .input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: whitesmoke;
+}
+.main .right .form-container form .input-box label {
+  font-size: var(--text-xs);
+}
+.main .right .form-container form .input-box input {
+  background-color: var(--bg-surface);
+  border: none;
+  outline: none;
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--radius-xs);
+  color: whitesmoke;
+}
+.main .right .form-container form .input-box input:hover {
+  outline: 2px solid var(--accent-primary);
+}
+.main .right .form-container form .input-box.color input {
+  padding: 0;
+  cursor: pointer;
+}
+.main .right .form-container form textarea {
+  resize: none;
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+  padding: var(--padding-sm);
+  outline: none;
+  border: none;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--text-lg);
+}
+.main .right .form-container form textarea:hover {
+  outline: 2px solid var(--accent-primary);
+}
+.main .right .form-container form textarea::-webkit-scrollbar {
+  display: none;
+}
+.main .right .form-container form input:focus,
+.main .right .form-container form textarea:focus {
+  outline: 2px solid var(--accent-primary);
+}
+.main .right .form-container.selected h2.no-elem {
+  display: none;
+}
+.main .right .form-container.selected form {
+  display: flex;
+}/*# sourceMappingURL=styles.css.map */
